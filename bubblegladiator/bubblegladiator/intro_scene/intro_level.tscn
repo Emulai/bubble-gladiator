@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://dd3eu55fwb5ft"]
+
+[ext_resource type="Script" path="res://intro_scene/scripts/intro_level.gd" id="1_30ab2"]
+[ext_resource type="PackedScene" uid="uid://dc5giehb8kf3j" path="res://pause_menu/pause_menu_ui.tscn" id="2_u6gg8"]
+[ext_resource type="Script" path="res://intro_scene/timer_ui_script.gd" id="3_vkobk"]
+
+[node name="IntroLevel" type="Node3D"]
+visible = false
+script = ExtResource("1_30ab2")
+
+[node name="PauseMenuUi" parent="." instance=ExtResource("2_u6gg8")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+script = ExtResource("3_vkobk")
+
+[node name="TimerUI" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "00"
+horizontal_alignment = 1

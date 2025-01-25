@@ -1,15 +1,51 @@
-[gd_scene load_steps=3 format=3 uid="uid://dmha124cw2rml"]
+[gd_scene load_steps=8 format=3 uid="uid://dmha124cw2rml"]
 
 [ext_resource type="PackedScene" uid="uid://bqwaxyfetwqoq" path="res://player_controller.tscn" id="1_2sp0f"]
+[ext_resource type="Script" path="res://scripts/npc_controller.gd" id="2_2wby6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5j43k"]
 albedo_color = Color(0.623529, 1, 0.486275, 1)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2e2u3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mctei"]
+albedo_color = Color(0.403922, 0.388235, 0.447059, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_bq7rd"]
+material = SubResource("StandardMaterial3D_mctei")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_i8l37"]
 
 [node name="Node3D" type="Node3D"]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(65.6106, 0, 0, 0, 0.34258, 0, 0, 0, 74.1021, 0, 0, 0)
 use_collision = true
+collision_layer = 2
+collision_mask = 2
 material = SubResource("StandardMaterial3D_5j43k")
 
 [node name="Player" parent="." instance=ExtResource("1_2sp0f")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.758169, 0, -0.652059, 0, 1, 0, 0.652059, 0, -0.758169, -71.2988, 15.3787, -55.6778)
+
+[node name="NPC" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.2319, 1.62739, -2.98024)
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="NPC"]
+script = ExtResource("2_2wby6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPC/CharacterBody3D"]
+shape = SubResource("CapsuleShape3D_2e2u3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NPC"]
+mesh = SubResource("CapsuleMesh_bq7rd")
+skeleton = NodePath("../CharacterBody3D")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="NPC"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPC/RigidBody3D"]
+shape = SubResource("CapsuleShape3D_i8l37")

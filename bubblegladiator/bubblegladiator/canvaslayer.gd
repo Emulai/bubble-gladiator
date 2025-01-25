@@ -2,7 +2,7 @@ extends CanvasLayer
 
 
 var currentscore = 0
-var distance = 0
+#var distance = 0
 
 #need to connect signal 
 #func _on_body_entered(body):

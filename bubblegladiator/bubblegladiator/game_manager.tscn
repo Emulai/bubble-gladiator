@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://rc1rwl465k4x"]
+
+[ext_resource type="Script" path="res://global_scripts/game_manager.gd" id="1_evxsd"]
+[ext_resource type="PackedScene" uid="uid://crgph40pi0bxx" path="res://main_menu/main_menu_ui.tscn" id="3_kobix"]
+
+[node name="Game_Manager" type="Node" node_paths=PackedStringArray("scenes_3d", "scenes_ui")]
+script = ExtResource("1_evxsd")
+scenes_3d = NodePath("3D_Scenes")
+scenes_ui = NodePath("UI_Scenes")
+
+[node name="3D_Scenes" type="Node3D" parent="."]
+visible = false
+
+[node name="UI_Scenes" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -325.0
+offset_right = 574.0
+offset_bottom = 322.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainMenuUI" parent="UI_Scenes" instance=ExtResource("3_kobix")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5

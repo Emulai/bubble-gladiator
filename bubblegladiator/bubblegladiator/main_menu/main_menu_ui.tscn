@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://main_menu/scripts/main_menu_script.gd" id="1_t33ha"]
 
-[node name="Menu" type="Control"]
+[node name="MainMenuUI" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

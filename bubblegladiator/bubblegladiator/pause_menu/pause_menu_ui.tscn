@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" path="res://pause_menu/scripts/pause_menu_script.gd" id="1_qj2wn"]
 
-[node name="PauseMenuUi" type="Control"]
+[node name="PauseMenuUI" type="Control"]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7p0crv2xkxf4"]
+
+[ext_resource type="Script" path="res://canvaslayer.gd" id="1_eyoxm"]
+
+[node name="Node3D" type="Node"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("1_eyoxm")
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_right = 0.049
+anchor_bottom = 0.039
+offset_right = -0.448002
+offset_bottom = -0.272001
+text = "Score:"
+
+[node name="Score" type="Label" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.045
+anchor_right = 0.128
+anchor_bottom = 0.039
+offset_left = 0.159996
+offset_right = 0.543991
+offset_bottom = -0.272001
+text = "0"

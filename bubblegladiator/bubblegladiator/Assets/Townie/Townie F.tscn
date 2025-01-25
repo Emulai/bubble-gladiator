@@ -1,0 +1,67 @@
+[gd_scene load_steps=5 format=3 uid="uid://bo16iocawf2lx"]
+
+[ext_resource type="PackedScene" uid="uid://8i8duyq67ok7" path="res://Assets/Townie/Models/Townie F Base.fbx" id="1_7d2cn"]
+[ext_resource type="AnimationLibrary" uid="uid://crhcxyhcyo3wa" path="res://Assets/Townie/Townie Anims.res" id="2_4wqss"]
+[ext_resource type="Material" uid="uid://c56uhvd2y5htl" path="res://Assets/Materials/Skin.tres" id="2_ovtj0"]
+[ext_resource type="Material" uid="uid://bcef7e0tobwr7" path="res://Assets/Materials/Clothes 1.tres" id="3_qgcmi"]
+
+[node name="Townie F" instance=ExtResource("1_7d2cn")]
+
+[node name="Skeleton3D" parent="." index="0"]
+bones/0/position = Vector3(-0.00556435, 1.10612, 0.00060187)
+bones/0/rotation = Quaternion(-0.01852, -0.00494949, -0.0096418, 0.99977)
+bones/1/rotation = Quaternion(0.00887609, -0.00186252, 0.000436173, 0.999959)
+bones/2/position = Vector3(4.33681e-19, 0.152439, -3.38398e-11)
+bones/2/rotation = Quaternion(0.0108743, -0.0239053, 0.00192873, 0.999653)
+bones/3/position = Vector3(4.33681e-19, 0.174216, 1.51027e-11)
+bones/3/rotation = Quaternion(0.0107847, -0.0238532, 0.00240648, 0.999654)
+bones/4/position = Vector3(4.33681e-19, 0.195993, -6.4905e-10)
+bones/4/rotation = Quaternion(-0.0115843, 0.0110074, -0.0121559, 0.999798)
+bones/5/rotation = Quaternion(0.0385643, -0.00754385, 0.0314114, 0.998734)
+bones/7/rotation = Quaternion(-0.548234, -0.417795, 0.62221, -0.371135)
+bones/8/position = Vector3(3.44664e-11, 0.158681, 3.27901e-10)
+bones/8/rotation = Quaternion(0.418801, 0.188817, 0.124024, 0.879529)
+bones/9/position = Vector3(3.92089e-11, 0.313897, -3.66394e-10)
+bones/9/rotation = Quaternion(0.00153732, 3.98192e-05, 0.251225, 0.967928)
+bones/10/position = Vector3(-4.90451e-12, 0.306691, 1.13625e-11)
+bones/10/rotation = Quaternion(0.0955494, 0.0216354, -0.123392, 0.98751)
+bones/11/position = Vector3(-1.02455e-12, 0.134922, 8.09242e-12)
+bones/11/rotation = Quaternion(0.201182, -0.00454808, -0.0171907, 0.979393)
+bones/12/position = Vector3(-2.10454e-11, 0.0228557, -4.19038e-11)
+bones/12/rotation = Quaternion(0.368151, 0.0210614, -0.113153, 0.922615)
+bones/13/rotation = Quaternion(0.0788364, 0.0110053, -0.0670381, 0.99457)
+bones/15/rotation = Quaternion(0.601779, -0.397764, 0.554968, 0.414316)
+bones/16/position = Vector3(2.23867e-12, 0.158681, 3.27695e-10)
+bones/16/rotation = Quaternion(0.425569, -0.159682, -0.137597, 0.880034)
+bones/17/position = Vector3(-8.95748e-12, 0.313902, 3.40927e-12)
+bones/17/rotation = Quaternion(-0.000617561, 2.69325e-05, -0.249227, 0.968445)
+bones/18/position = Vector3(-3.04176e-12, 0.306691, 7.88036e-12)
+bones/18/rotation = Quaternion(0.00262509, 0.0256123, 0.134109, 0.990632)
+bones/19/position = Vector3(4.67022e-12, 0.12192, 3.50941e-12)
+bones/19/rotation = Quaternion(0.0930784, -0.0041238, 0.0533156, 0.994222)
+bones/20/position = Vector3(1.0624e-11, 0.0282863, -2.29184e-10)
+bones/20/rotation = Quaternion(0.213773, -0.013918, 0.0646769, 0.974641)
+bones/21/rotation = Quaternion(0.0760933, 0.00309476, -0.0201546, 0.996892)
+bones/23/rotation = Quaternion(0.0386856, 0.0635468, 0.996834, -0.0280597)
+bones/24/position = Vector3(1.07268e-10, 0.553394, 3.81761e-12)
+bones/24/rotation = Quaternion(-0.218094, -0.0779303, 0.0232323, 0.972534)
+bones/25/position = Vector3(4.13752e-12, 0.493414, 4.51915e-11)
+bones/25/rotation = Quaternion(0.80438, -0.0274996, -0.0314859, 0.592643)
+bones/26/position = Vector3(-6.96917e-11, 0.0257086, 5.25786e-12)
+bones/26/rotation = Quaternion(-0.00199237, -1.89077e-05, 0.0260546, 0.999659)
+bones/28/rotation = Quaternion(-0.106246, 0.059314, 0.991717, 0.0411202)
+bones/29/position = Vector3(1.35304e-10, 0.553394, -2.33224e-11)
+bones/29/rotation = Quaternion(-0.181026, 0.0296923, -0.0138162, 0.982933)
+bones/30/position = Vector3(-1.99918e-12, 0.493414, 1.7363e-11)
+bones/30/rotation = Quaternion(0.781869, 0.0319249, 0.0436739, 0.621091)
+bones/31/position = Vector3(-2.82728e-11, 0.0256135, -2.9183e-11)
+bones/31/rotation = Quaternion(-0.00606455, 0.000174902, -0.0288259, 0.999566)
+
+[node name="Woman" parent="Skeleton3D" index="0"]
+surface_material_override/0 = ExtResource("2_ovtj0")
+surface_material_override/1 = ExtResource("3_qgcmi")
+
+[node name="AnimationPlayer" parent="." index="1"]
+libraries = {
+"Townie Anims": ExtResource("2_4wqss")
+}

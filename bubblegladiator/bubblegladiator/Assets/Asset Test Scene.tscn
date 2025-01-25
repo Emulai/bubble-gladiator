@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://cwqt6ntm7m5lr"]
+
+[ext_resource type="PackedScene" uid="uid://blps04rf4qa2l" path="res://Assets/Child/Child.tscn" id="1_a5tsx"]
+[ext_resource type="PackedScene" uid="uid://dplghvgu8wbha" path="res://Assets/Player/Player.tscn" id="2_m1134"]
+[ext_resource type="PackedScene" uid="uid://bo16iocawf2lx" path="res://Assets/Townie/Townie F.tscn" id="3_jwuoe"]
+[ext_resource type="PackedScene" uid="uid://b8u3f8u5xgab0" path="res://Assets/Townie/Townie M.tscn" id="4_yfcii"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Child Base" parent="." instance=ExtResource("1_a5tsx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25442, 0, 0.0590692)
+
+[node name="AnimTest" parent="." instance=ExtResource("2_m1134")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.64317, -1.19209e-07, -0.186897)
+
+[node name="Townie F" parent="." instance=ExtResource("3_jwuoe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.439776, 0, -0.846609)
+
+[node name="Townie M" parent="." instance=ExtResource("4_yfcii")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.41236, 0, -1.14868)

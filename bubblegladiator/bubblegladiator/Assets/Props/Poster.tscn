@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bs4rym1k814mu"]
+
+[ext_resource type="Material" uid="uid://b1karekaysgn0" path="res://Assets/Materials/Prop Materials/Poster.tres" id="1_jgvi6"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_tgnli"]
+size = Vector2(10, 4)
+
+[node name="CSGMesh3D5" type="CSGMesh3D"]
+transform = Transform3D(-6.16449e-08, -1, 9.44779e-08, 0, -5.96046e-08, -1.58508, 1.41027, -4.37114e-08, 4.12976e-15, 17.2163, 4.09005, -0.0141907)
+mesh = SubResource("PlaneMesh_tgnli")
+material = ExtResource("1_jgvi6")

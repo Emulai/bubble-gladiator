@@ -21,13 +21,13 @@ func _physics_process(delta: float) -> void:
 	
 	pitchPivot.rotation.x = clamp(
 		pitchPivot.rotation.x,
-		deg_to_rad(-70),
-		deg_to_rad(-5)
+		deg_to_rad(-90),
+		deg_to_rad(45)
 	)
 	twistInput = 0.0
 	pitchInput = 0.0
 	
-func _input(event: InputEvent) -> void:
+func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 			twistInput = -event.relative.x * mouseCameraSensitivity

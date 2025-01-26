@@ -9,6 +9,7 @@ scenes_3d = NodePath("3D_Scenes")
 scenes_ui = NodePath("UI_Scenes")
 
 [node name="3D_Scenes" type="Node3D" parent="."]
+visible = false
 
 [node name="UI_Scenes" type="Control" parent="."]
 layout_mode = 3

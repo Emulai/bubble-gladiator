@@ -10,8 +10,8 @@ var parent
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	captureMouse()
 	parent = get_parent()
-	#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -36,15 +36,9 @@ func _physics_process(delta: float) -> void:
 		
 	move_and_slide()
 
-func updateMoveAnimation(inputVector: Vector2):
-	if inputVector == Vector2.ZERO:
-		changeAnimIfNotActive("Idle")
-	elif isCharging:
-		changeAnimIfNotActive("Charge")
-	else:
-		changeAnimIfNotActive("Run")
-		
-func changeAnimIfNotActive(anim: String):
-	var animName = "Player/" + anim
-	if not anims.current_animation == animName:
-		anims.play(animName)
+# Kieron will need to use these to handle menu interaction
+func releaseMouse():
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	
+func captureMouse():
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)

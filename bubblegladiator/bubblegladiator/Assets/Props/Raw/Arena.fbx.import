@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b7pnu0qws2n7b"
-path="res://.godot/imported/Bench.fbx-fbd3a89f9eec97daf195339b1844f7ea.scn"
+uid="uid://2y4suhkmcg05"
+path="res://.godot/imported/Arena.fbx-d7c45172fc6b31db593634d0746f8e53.scn"
 
 [deps]
 
-source_file="res://Assets/Props/Models/Bench.fbx"
-dest_files=["res://.godot/imported/Bench.fbx-fbd3a89f9eec97daf195339b1844f7ea.scn"]
+source_file="res://Assets/Props/Raw/Arena.fbx"
+dest_files=["res://.godot/imported/Arena.fbx-d7c45172fc6b31db593634d0746f8e53.scn"]
 
 [params]
 

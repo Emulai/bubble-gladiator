@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://be6jgl36048xh"
-path="res://.godot/imported/Towel.fbx-4f6bc439a632f8e14e09a77c029379e3.scn"
+uid="uid://b7pnu0qws2n7b"
+path="res://.godot/imported/Bench.fbx-4fb88621d02a8a581525961273a574b2.scn"
 
 [deps]
 
-source_file="res://Assets/Props/Models/Towel.fbx"
-dest_files=["res://.godot/imported/Towel.fbx-4f6bc439a632f8e14e09a77c029379e3.scn"]
+source_file="res://Assets/Props/Raw/Bench.fbx"
+dest_files=["res://.godot/imported/Bench.fbx-4fb88621d02a8a581525961273a574b2.scn"]
 
 [params]
 

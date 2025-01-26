@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bdxneg6f8lb7v"
-path="res://.godot/imported/Bench colour.fbx-4867c5f334944fbcf5a248b04d3b5489.scn"
+uid="uid://1837v03f04h0"
+path="res://.godot/imported/Bin.fbx-3cd807c32abe189f3abe2d4c5aba24a2.scn"
 
 [deps]
 
-source_file="res://Assets/Props/Models/Bench colour.fbx"
-dest_files=["res://.godot/imported/Bench colour.fbx-4867c5f334944fbcf5a248b04d3b5489.scn"]
+source_file="res://Assets/Props/Raw/Bin.fbx"
+dest_files=["res://.godot/imported/Bin.fbx-3cd807c32abe189f3abe2d4c5aba24a2.scn"]
 
 [params]
 

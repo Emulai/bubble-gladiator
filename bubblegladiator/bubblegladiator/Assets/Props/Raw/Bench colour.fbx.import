@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cjgvbymao3kyf"
-path="res://.godot/imported/Landing Matt.fbx-402343e3e3d99320abb675259b318c77.scn"
+uid="uid://bdxneg6f8lb7v"
+path="res://.godot/imported/Bench colour.fbx-a15a71a274a64acfa6e046278f77338b.scn"
 
 [deps]
 
-source_file="res://Assets/Props/Models/Landing Matt.fbx"
-dest_files=["res://.godot/imported/Landing Matt.fbx-402343e3e3d99320abb675259b318c77.scn"]
+source_file="res://Assets/Props/Raw/Bench colour.fbx"
+dest_files=["res://.godot/imported/Bench colour.fbx-a15a71a274a64acfa6e046278f77338b.scn"]
 
 [params]
 

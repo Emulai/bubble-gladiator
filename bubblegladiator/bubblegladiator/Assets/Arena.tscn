@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bpnxnmdyi84ke"]
+[gd_scene load_steps=23 format=3 uid="uid://bpnxnmdyi84ke"]
 
 [ext_resource type="Material" uid="uid://cg6h5wb8arvm2" path="res://Assets/Materials/Floor.tres" id="1_3ckyw"]
 [ext_resource type="Sky" uid="uid://deopygpj8a4ss" path="res://Assets/Materials/Sky Arena.tres" id="1_ectjo"]
@@ -15,6 +15,10 @@
 [ext_resource type="Material" uid="uid://brd57hv5fq3e5" path="res://Assets/Materials/Prop Materials/White.tres" id="13_lsmmr"]
 [ext_resource type="PackedScene" uid="uid://ctjxjhagdb6hw" path="res://Assets/Props/Door.tscn" id="14_5e7ix"]
 [ext_resource type="PackedScene" uid="uid://don7xwaol3tgt" path="res://Assets/Props/Clock.tscn" id="15_y0cew"]
+[ext_resource type="PackedScene" uid="uid://bpmlqcdvbrdkd" path="res://Assets/NPCs/Child Interactable.tscn" id="17_jft5l"]
+[ext_resource type="PackedScene" uid="uid://dgmb20wr1a0t2" path="res://Assets/NPCs/Townie F Interactable.tscn" id="18_g8tv7"]
+[ext_resource type="PackedScene" uid="uid://bc0kwi62c2hty" path="res://Assets/NPCs/Townie M Interactable.tscn" id="19_bl5ie"]
+[ext_resource type="PackedScene" uid="uid://cn4kx0pl2atnm" path="res://Assets/NPCs/Wrestler Interactable.tscn" id="20_c23ms"]
 
 [sub_resource type="Environment" id="Environment_sk7hd"]
 background_mode = 2
@@ -34,6 +38,7 @@ environment = SubResource("Environment_sk7hd")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0.0514202, 10.6685, -0.0385895)
+light_color = Color(0.953104, 0.800206, 0.643384, 1)
 light_energy = 0.455
 light_indirect_energy = 0.42
 light_volumetric_fog_energy = 5.687
@@ -203,10 +208,10 @@ transform = Transform3D(0.998657, 0, -0.051813, 0, 1, 0, 0.051813, 0, 0.998657, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.71949, 0.751556, 11.1657)
 
 [node name="Bag2" parent="." instance=ExtResource("7_q7cx8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.84167, 0.0460685, -11.465)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.84167, 1.82543, -11.465)
 
 [node name="Bag3" parent="." instance=ExtResource("7_q7cx8")]
-transform = Transform3D(0.977523, 0, -0.21083, 0, 1, 0, 0.21083, 0, 0.977523, 4.18125, 0.00106825, -11.4164)
+transform = Transform3D(0.977523, 0, -0.21083, 0, 1, 0, 0.21083, 0, 0.977523, 4.18125, 1.78042, -11.4164)
 
 [node name="BubbleEmpty" parent="." instance=ExtResource("8_jpwgv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.1811, 1.56419, -9.9914)
@@ -305,3 +310,57 @@ transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 0.048697
 
 [node name="Clock" parent="." instance=ExtResource("15_y0cew")]
 transform = Transform3D(-6.40699e-08, -1.46575, 0, 1.46575, -6.40699e-08, 0, 0, 0, 1.46575, 17.471, 5.7035, -0.139429)
+
+[node name="WrestlerInteractable" parent="." instance=ExtResource("20_c23ms")]
+transform = Transform3D(-0.996205, 0, -0.0870339, 0, 1, 0, 0.0870339, 0, -0.996205, -0.448512, 2.33548, 3.56996)
+
+[node name="WrestlerInteractable2" parent="." instance=ExtResource("20_c23ms")]
+transform = Transform3D(0.0851387, 0, -0.996369, 0, 1, 0, 0.996369, 0, 0.0851387, 14.2317, -9.53674e-07, -0.169126)
+
+[node name="ChildInteractable" parent="." instance=ExtResource("17_jft5l")]
+transform = Transform3D(-0.124502, 0, 0.992219, 0, 1, 0, -0.992219, 0, -0.124502, 14.0795, 0, -3.16016)
+
+[node name="ChildInteractable2" parent="." instance=ExtResource("17_jft5l")]
+transform = Transform3D(-0.322712, 0, -0.946497, 0, 1, 0, 0.946497, 0, -0.322712, 12.8705, -9.53674e-07, -1.49444)
+
+[node name="ChildInteractable3" parent="." instance=ExtResource("17_jft5l")]
+transform = Transform3D(0.340462, 0, 0.940258, 0, 1, 0, -0.940258, 0, 0.340462, 15.2152, -9.53674e-07, 2.90517)
+
+[node name="ChildInteractable4" parent="." instance=ExtResource("17_jft5l")]
+transform = Transform3D(0.727713, 0, -0.685882, 0, 1, 0, 0.685882, 0, 0.727713, 13.7717, -9.53674e-07, 1.96653)
+
+[node name="ChildInteractable5" parent="." instance=ExtResource("17_jft5l")]
+transform = Transform3D(0.977482, 0, 0.211018, 0, 1, 0, -0.211018, 0, 0.977482, 4.93631, -9.53674e-07, 14.2641)
+
+[node name="ChildInteractable6" parent="." instance=ExtResource("17_jft5l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.1597, 0, 5.55548)
+
+[node name="ChildInteractable7" parent="." instance=ExtResource("17_jft5l")]
+transform = Transform3D(-0.184535, 0, -0.982826, 0, 1, 0, 0.982826, 0, -0.184535, -14.3, 0, 2.88496)
+
+[node name="ChildInteractable8" parent="." instance=ExtResource("17_jft5l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.46227, 0, -14.9054)
+
+[node name="TownieFInteractable" parent="." instance=ExtResource("18_g8tv7")]
+transform = Transform3D(-0.576903, 0, 0.816813, 0, 1, 0, -0.816813, 0, -0.576903, -15.1003, 9.53674e-07, 4.83496)
+
+[node name="TownieFInteractable2" parent="." instance=ExtResource("18_g8tv7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.3471, 9.53674e-07, 1.81256)
+
+[node name="TownieFInteractable3" parent="." instance=ExtResource("18_g8tv7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.61618, 0, 13.0147)
+
+[node name="TownieMInteractable" parent="." instance=ExtResource("19_bl5ie")]
+transform = Transform3D(0.582492, 0, -0.812837, 0, 1, 0, 0.812837, 0, 0.582492, 10.3558, 9.53674e-07, -11.6743)
+
+[node name="TownieMInteractable2" parent="." instance=ExtResource("19_bl5ie")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.55072, 9.53674e-07, -12.6672)
+
+[node name="TownieFInteractable4" parent="." instance=ExtResource("18_g8tv7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.54246, -9.53674e-07, -12.6433)
+
+[node name="TownieMInteractable3" parent="." instance=ExtResource("19_bl5ie")]
+transform = Transform3D(-0.754469, 0, -0.656336, 0, 1, 0, 0.656336, 0, -0.754469, 14.5937, 1.90735e-06, 7.19272)
+
+[node name="TownieMInteractable4" parent="." instance=ExtResource("19_bl5ie")]
+transform = Transform3D(-0.66194, 0, -0.749557, 0, 1, 0, 0.749557, 0, -0.66194, -4.90545, 0, -10.4661)

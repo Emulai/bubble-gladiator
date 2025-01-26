@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b1ivo7ngufqwt"
-path="res://.godot/imported/Bag.fbx-a67e76c872224410ff74c0aead418ccd.scn"
+uid="uid://c0prmwdcfujox"
+path="res://.godot/imported/Bubble Empty.fbx-eb81b02c029caf852be6eb224fd22acf.scn"
 
 [deps]
 
-source_file="res://Assets/Props/Models/Bag.fbx"
-dest_files=["res://.godot/imported/Bag.fbx-a67e76c872224410ff74c0aead418ccd.scn"]
+source_file="res://Assets/Props/Raw/Bubble Empty.fbx"
+dest_files=["res://.godot/imported/Bubble Empty.fbx-eb81b02c029caf852be6eb224fd22acf.scn"]
 
 [params]
 

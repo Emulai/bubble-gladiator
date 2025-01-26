@@ -76,16 +76,17 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_nnq7i")
 
-[node name="Towel RB" type="RigidBody3D"]
-collision_mask = 7
-contact_monitor = true
-max_contacts_reported = 5
+[node name="Towel" type="Node3D"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000991821, 0.0894012, -0.0043335)
 shape = SubResource("BoxShape3D_s63go")
 
-[node name="Towel" type="MeshInstance3D" parent="."]
+[node name="Towel" type="MeshInstance3D" parent="RigidBody3D"]
 transform = Transform3D(100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 0, 0.0834188, 0)
 mesh = SubResource("ArrayMesh_rpfr2")
 skeleton = NodePath("")

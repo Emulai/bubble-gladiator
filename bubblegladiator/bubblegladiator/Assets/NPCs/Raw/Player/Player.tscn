@@ -8,7 +8,6 @@
 [node name="AnimTest" instance=ExtResource("1_j8xka")]
 
 [node name="Skeleton3D" parent="." index="0"]
-
 bones/0/position = Vector3(-0.00761649, 0.887405, -0.031451)
 bones/0/rotation = Quaternion(-0.00812224, -0.00790538, -0.00966645, 0.999889)
 bones/1/rotation = Quaternion(0.0100978, -0.00178114, -0.0168316, 0.999806)
@@ -47,3 +46,4 @@ surface_material_override/1 = ExtResource("3_8d57b")
 libraries = {
 "Player": ExtResource("4_m4pjm")
 }
+autoplay = "Player/Idle"

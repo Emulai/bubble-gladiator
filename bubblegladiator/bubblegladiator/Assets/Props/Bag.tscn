@@ -76,17 +76,15 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_hny4e")
 
-[node name="Bag RB" type="RigidBody3D"]
-collision_mask = 7
-mass = 5.0
-contact_monitor = true
-max_contacts_reported = 5
+[node name="Bag" type="Node3D"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00341797, 0.156845, 0.01651)
 shape = SubResource("BoxShape3D_unr7c")
 
-[node name="Bag" type="MeshInstance3D" parent="."]
+[node name="Bag" type="MeshInstance3D" parent="RigidBody3D"]
 transform = Transform3D(100, 0, 0, 0, -8.92908e-06, 100, 0, -74.9025, -1.19209e-05, 0, 0.158576, 0)
 layers = 3
 mesh = SubResource("ArrayMesh_tjtl2")

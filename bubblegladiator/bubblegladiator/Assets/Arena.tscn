@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bpnxnmdyi84ke"]
+[gd_scene load_steps=19 format=3 uid="uid://bpnxnmdyi84ke"]
 
 [ext_resource type="Material" uid="uid://cg6h5wb8arvm2" path="res://Assets/Materials/Floor.tres" id="1_3ckyw"]
 [ext_resource type="Sky" uid="uid://deopygpj8a4ss" path="res://Assets/Materials/Sky Arena.tres" id="1_ectjo"]
@@ -12,6 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://dawgk0brqh7nv" path="res://Assets/Props/Bubble Empty.tscn" id="8_jpwgv"]
 [ext_resource type="PackedScene" uid="uid://dywa8rm2yrhua" path="res://Assets/Props/Water Bottle.tscn" id="9_ex3ba"]
 [ext_resource type="PackedScene" uid="uid://ufk3187gslts" path="res://Assets/Props/Towel.tscn" id="10_58pf5"]
+[ext_resource type="Material" uid="uid://brd57hv5fq3e5" path="res://Assets/Materials/Prop Materials/White.tres" id="13_lsmmr"]
+[ext_resource type="PackedScene" uid="uid://ctjxjhagdb6hw" path="res://Assets/Props/Door.tscn" id="14_5e7ix"]
+[ext_resource type="PackedScene" uid="uid://don7xwaol3tgt" path="res://Assets/Props/Clock.tscn" id="15_y0cew"]
 
 [sub_resource type="Environment" id="Environment_sk7hd"]
 background_mode = 2
@@ -21,6 +24,8 @@ glow_enabled = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_g8pwo"]
 size = Vector2(9.145, 40.595)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_wwe0b"]
 
 [node name="Arena" type="Node3D"]
 
@@ -271,3 +276,32 @@ transform = Transform3D(0.263705, 0, 0.964603, 0, 1, 0, -0.964603, 0, 0.263705, 
 
 [node name="Player" parent="." instance=ExtResource("4_0gund")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.62367, 1.68582, -6.08215)
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 2.98023e-08, -1, 0, 1, 2.98023e-08, 10.2574, 5.85033, -17.1008)
+mesh = SubResource("PlaneMesh_wwe0b")
+material = ExtResource("13_lsmmr")
+
+[node name="CSGMesh3D2" type="CSGMesh3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 2.98023e-08, -1, 0, 1, 2.98023e-08, 12.9512, 3.73143, -17.1008)
+mesh = SubResource("PlaneMesh_wwe0b")
+material = ExtResource("13_lsmmr")
+
+[node name="CSGMesh3D3" type="CSGMesh3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, 2.98023e-08, 0, 2.98023e-08, -1, -1, -4.37114e-08, -1.3027e-15, -17.1853, 3.66027, 6.84667)
+mesh = SubResource("PlaneMesh_wwe0b")
+material = ExtResource("13_lsmmr")
+
+[node name="CSGMesh3D4" type="CSGMesh3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, 2.98023e-08, 0, 2.98023e-08, -1, -1, -4.37114e-08, -1.3027e-15, -16.8159, 6.28862, 9.20487)
+mesh = SubResource("PlaneMesh_wwe0b")
+material = ExtResource("13_lsmmr")
+
+[node name="Door" parent="." instance=ExtResource("14_5e7ix")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.0486978, 0, -17.2136)
+
+[node name="Door2" parent="." instance=ExtResource("14_5e7ix")]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 0.0486978, 0, 17.213)
+
+[node name="Clock" parent="." instance=ExtResource("15_y0cew")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 17.4058, 4.94243, -0.139429)

@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=4 uid="uid://dawgk0brqh7nv"]
+[gd_scene load_steps=8 format=4 uid="uid://dawgk0brqh7nv"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://rrno1fvn6rpe" path="res://Assets/Materials/Physics/Bouncy.tres" id="1_nnh8n"]
 [ext_resource type="Material" uid="uid://bj48i1vn67fxb" path="res://Assets/Materials/Child Bubble.tres" id="1_v5kqt"]
+[ext_resource type="Script" path="res://scripts/hazard.gd" id="2_su45m"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_uixlo"]
 
@@ -54,6 +55,7 @@ physics_material_override = ExtResource("1_nnh8n")
 gravity_scale = 0.543
 contact_monitor = true
 max_contacts_reported = 5
+script = ExtResource("2_su45m")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_uixlo")

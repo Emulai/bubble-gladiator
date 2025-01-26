@@ -13,6 +13,8 @@ var paused = false
 var timeLimit = 10
 var oneSecond = 0
 
+var launch_physics: LaunchPhysics
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Global.game_manager = self
@@ -44,18 +46,23 @@ func clean_up_3d_scene() -> void:
 	timeLimit = 10
 	oneSecond = 0
 	paused = false
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	Engine.time_scale = 1
 
 func pause_menu():
-	if paused:
-		change_ui_scene("")
-		Engine.time_scale = 1
-	else:
-		change_ui_scene("res://pause_menu/pause_menu_ui.tscn")
-		toggle_current_ui_scene_visible(true)
-		Engine.time_scale = 0
-	
-	paused = !paused
+	# Check that we're not in another UI scene before pausing
+	if current_3d_scene != null:
+		if paused:
+			change_ui_scene("")
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+			Engine.time_scale = 1
+		else:
+			change_ui_scene("res://pause_menu/pause_menu_ui.tscn")
+			toggle_current_ui_scene_visible(true)
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+			Engine.time_scale = 0
+		
+		paused = !paused
 
 
 func toggle_current_ui_scene_visible(visible: bool) -> void:
@@ -91,7 +98,7 @@ func change_3d_scene(new_scene: String, delete: bool = true, keep_running: bool 
 			current_3d_scene.visible = false # Keeps in memory and running
 		else:
 			scenes_3d.remove_child(current_3d_scene) # Keeps in memory, does not run
-	
+
 	if !new_scene.is_empty():
 		var new = load(new_scene).instantiate()
 		scenes_3d.add_child(new)

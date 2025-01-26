@@ -1,6 +1,5 @@
 [gd_scene load_steps=5 format=3 uid="uid://c2vbo4wtognle"]
 
-
 [ext_resource type="Script" path="res://scripts/playerMovement.gd" id="1_mqgtl"]
 [ext_resource type="Script" path="res://scripts/cameraMovement.gd" id="2_inp6y"]
 
@@ -15,7 +14,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.15499, 0)
 top_level = true
 collision_layer = 4
 collision_mask = 6
-
 script = ExtResource("1_mqgtl")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="PlayerBody3D"]
@@ -33,6 +31,7 @@ script = ExtResource("2_inp6y")
 [node name="v" type="Node3D" parent="CameraPosition/h"]
 
 [node name="SpringArm3D" type="SpringArm3D" parent="CameraPosition/h/v"]
+collision_mask = 2
 spring_length = 4.0
 margin = 0.5
 

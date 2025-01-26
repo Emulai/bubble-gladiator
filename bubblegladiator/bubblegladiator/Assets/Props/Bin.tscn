@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=4 uid="uid://bwklk4ibaweg3"]
+[gd_scene load_steps=9 format=4 uid="uid://bwklk4ibaweg3"]
 
 [ext_resource type="Material" uid="uid://ciobw86of3r5q" path="res://Assets/Materials/Prop Materials/Green_Shiny.tres" id="1_sh48f"]
+[ext_resource type="Script" path="res://scripts/hazard.gd" id="1_vlsvr"]
 [ext_resource type="Material" uid="uid://dksys72rkrjw" path="res://Assets/Materials/Prop Materials/Black.tres" id="2_dkbrj"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_xj5nk"]
@@ -84,6 +85,7 @@ collision_mask = 7
 mass = 200.0
 contact_monitor = true
 max_contacts_reported = 5
+script = ExtResource("1_vlsvr")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.64, 0)

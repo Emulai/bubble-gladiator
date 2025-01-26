@@ -1,8 +1,8 @@
-[gd_scene load_steps=24 format=3 uid="uid://bpnxnmdyi84ke"]
+[gd_scene load_steps=25 format=3 uid="uid://bpnxnmdyi84ke"]
 
-[ext_resource type="Material" path="res://Assets/Materials/Floor.tres" id="1_3ckyw"]
-[ext_resource type="Sky" uid="uid://b0tojlgtyy6dc" path="res://Assets/Materials/Sky Arena.tres" id="1_ectjo"]
-[ext_resource type="Material" path="res://Assets/Materials/Wall.tres" id="2_mnpyc"]
+[ext_resource type="Material" uid="uid://cg6h5wb8arvm2" path="res://Assets/Materials/Floor.tres" id="1_3ckyw"]
+[ext_resource type="Sky" uid="uid://deopygpj8a4ss" path="res://Assets/Materials/Sky Arena.tres" id="1_ectjo"]
+[ext_resource type="Material" uid="uid://c1yk65v5qclwo" path="res://Assets/Materials/Wall.tres" id="2_mnpyc"]
 [ext_resource type="PackedScene" uid="uid://bide4r3faft4x" path="res://Assets/Props/Arena Prop.tscn" id="2_o14xa"]
 [ext_resource type="PackedScene" uid="uid://c2vbo4wtognle" path="res://player_controller.tscn" id="4_0gund"]
 [ext_resource type="PackedScene" uid="uid://b14ckfwf71a07" path="res://Assets/Props/Bench.tscn" id="4_g7vge"]
@@ -13,13 +13,14 @@
 [ext_resource type="PackedScene" uid="uid://dywa8rm2yrhua" path="res://Assets/Props/Water Bottle.tscn" id="9_ex3ba"]
 [ext_resource type="PackedScene" uid="uid://ufk3187gslts" path="res://Assets/Props/Towel.tscn" id="10_58pf5"]
 [ext_resource type="Material" uid="uid://brd57hv5fq3e5" path="res://Assets/Materials/Prop Materials/White.tres" id="13_lsmmr"]
-[ext_resource type="PackedScene" path="res://Assets/Props/Door.tscn" id="14_5e7ix"]
+[ext_resource type="PackedScene" uid="uid://ctjxjhagdb6hw" path="res://Assets/Props/Door.tscn" id="14_5e7ix"]
 [ext_resource type="PackedScene" uid="uid://don7xwaol3tgt" path="res://Assets/Props/Clock.tscn" id="15_y0cew"]
 [ext_resource type="PackedScene" uid="uid://bpmlqcdvbrdkd" path="res://Assets/NPCs/Child Interactable.tscn" id="17_jft5l"]
 [ext_resource type="PackedScene" uid="uid://dgmb20wr1a0t2" path="res://Assets/NPCs/Townie F Interactable.tscn" id="18_g8tv7"]
 [ext_resource type="PackedScene" uid="uid://bc0kwi62c2hty" path="res://Assets/NPCs/Townie M Interactable.tscn" id="19_bl5ie"]
 [ext_resource type="Script" path="res://arena_scene/timer_ui_script.gd" id="20_2i1cp"]
 [ext_resource type="PackedScene" uid="uid://cn4kx0pl2atnm" path="res://Assets/NPCs/Wrestler Interactable.tscn" id="20_c23ms"]
+[ext_resource type="Script" path="res://arena_scene/score_ui_script.gd" id="21_deyjb"]
 
 [sub_resource type="Environment" id="Environment_sk7hd"]
 background_mode = 2
@@ -385,3 +386,23 @@ offset_right = 61.0
 offset_bottom = 51.0
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Panel2" type="Panel" parent="CanvasLayer"]
+offset_right = 300.0
+offset_bottom = 50.0
+size_flags_horizontal = 4
+script = ExtResource("21_deyjb")
+
+[node name="Score" type="Label" parent="CanvasLayer/Panel2"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_right = 1.0
+offset_bottom = 11.5
+grow_vertical = 2
+scale = Vector2(1.16667, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true

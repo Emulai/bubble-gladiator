@@ -16,13 +16,14 @@ func _ready() -> void:
 
 
 func _on_body_entered(body: Node):
+	print("test")
 	if body.name == "PlayerBody3D":
 		axis_lock_angular_x = false
 		axis_lock_angular_z = false
 		print(body.transform)
 		var result = body.transform.origin - transform.origin
 		result.y = abs(result.y)
-		apply_force(result * 1000)
+		apply_force(result * 20)
 		
 	# TODO
 	# Add realistic mass to objects

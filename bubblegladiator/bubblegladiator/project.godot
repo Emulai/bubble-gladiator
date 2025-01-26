@@ -75,4 +75,3 @@ look_left={
 
 3d_physics/layer_1="interactable"
 3d_physics/layer_2="world"
-3d_physics/layer_3="player"

@@ -11,7 +11,6 @@ func _process(delta: float) -> void:
 
 
 func _on_start_button_pressed() -> void:
-	# get_tree().change_scene_to_file("res://intro_scene/intro_level.tscn")
 	Global.game_manager.change_ui_scene("") # Pressing start we close the main menu UI
 	Global.game_manager.change_3d_scene("res://intro_scene/intro_level.tscn")
 	# Capture the mouse for the 3d scene

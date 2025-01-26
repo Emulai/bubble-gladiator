@@ -13,7 +13,10 @@ var paused = false
 var timeLimit = 10
 var oneSecond = 0
 
-var launch_physics: LaunchPhysics
+var launch_physics = {
+	"normal_launch_force": 1000,
+	"charged_launch_force": 5000,
+}
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -102,6 +105,8 @@ func change_3d_scene(new_scene: String, delete: bool = true, keep_running: bool 
 	if !new_scene.is_empty():
 		var new = load(new_scene).instantiate()
 		scenes_3d.add_child(new)
+		# Capture the mouse for the 3d scene
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		current_3d_scene = new
 	else:
 		current_3d_scene = null

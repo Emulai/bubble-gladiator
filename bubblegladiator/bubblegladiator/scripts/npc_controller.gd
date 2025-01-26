@@ -24,14 +24,16 @@ func _on_body_entered(body: Node):
 		# Avoid negative vertical force applied so we are launching things up, not down
 		result.y = abs(result.y)
 		# Clamp the y force so we get nice launch angles
-		if result.y < 0.15:
-			result.y = 0.15
+		if result.y < 0.35:
+			result.y = 0.35
 		elif result.y > 0.6:
 			result.y = 0.6
 		# possibly do a check here for whether the player was charging or not
 		# and use appropriate force multiplier
-		print(Global.game_manager.launch_physics.normal_launch_force)
-		apply_force(result * 1000)
+		if true:
+			apply_force(result * Global.game_manager.launch_physics.normal_launch_force)
+		else:
+			apply_force(result * Global.game_manager.launch_physics.charged_launch_force)
 		
 	# TODO
 	# Add realistic mass to objects

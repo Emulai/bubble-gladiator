@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dnwiqti1ydbvg"]
-
-[ext_resource type="Script" path="res://scripts/launch_physics.gd" id="1_hmars"]
-
-[node name="LaunchPhysics" type="Node"]
-script = ExtResource("1_hmars")

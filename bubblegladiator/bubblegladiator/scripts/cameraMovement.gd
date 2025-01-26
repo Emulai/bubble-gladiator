@@ -27,7 +27,8 @@ func _physics_process(delta: float) -> void:
 	twistInput = 0.0
 	pitchInput = 0.0
 	
-func _unhandled_input(event: InputEvent) -> void:
+func _input(event: InputEvent) -> void:
+	print('is this getting called?')
 	if event is InputEventMouseMotion:
 		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 			twistInput = -event.relative.x * mouseCameraSensitivity

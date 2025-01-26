@@ -34,6 +34,7 @@ func _on_body_entered(body: Node):
 			result.y = 0.6
 		# possibly do a check here for whether the player was charging or not
 		# and use appropriate force multiplier
+		
 		if true:
 			apply_force(result * Global.game_manager.launch_physics.normal_launch_force)
 		else:

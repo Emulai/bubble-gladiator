@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/playerMovement.gd" id="1_mqgtl"]
 [ext_resource type="Script" path="res://scripts/cameraMovement.gd" id="2_inp6y"]
 [ext_resource type="PackedScene" uid="uid://dplghvgu8wbha" path="res://Assets/NPCs/Raw/Player/Player.tscn" id="2_q87ej"]
-[ext_resource type="CameraAttributesPractical" path="res://Assets/Materials/Camera Attribute DOF.tres" id="3_y45qj"]
+[ext_resource type="CameraAttributesPractical" uid="uid://civ8slu2d1ouo" path="res://Assets/Materials/Camera Attribute DOF.tres" id="3_y45qj"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_kddpd"]
 

@@ -3,6 +3,10 @@
 [ext_resource type="Material" uid="uid://ciobw86of3r5q" path="res://Assets/Materials/Prop Materials/Green_Shiny.tres" id="1_sh48f"]
 [ext_resource type="Material" uid="uid://dksys72rkrjw" path="res://Assets/Materials/Prop Materials/Black.tres" id="2_dkbrj"]
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_xj5nk"]
+height = 1.26512
+radius = 0.573916
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6icvw"]
 resource_name = "Green"
 vertex_color_use_as_albedo = true
@@ -75,23 +79,19 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_kjljo")
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_xj5nk"]
-height = 1.26512
-radius = 0.573916
+[node name="Bin RB" type="RigidBody3D"]
+collision_mask = 7
+mass = 200.0
+contact_monitor = true
+max_contacts_reported = 5
 
-[node name="Bin2" type="Node3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.64, 0)
+shape = SubResource("CylinderShape3D_xj5nk")
 
-[node name="RigidBody3D" type="RigidBody3D" parent="."]
-collision_layer = 3
-collision_mask = 3
-
-[node name="Bin" type="MeshInstance3D" parent="RigidBody3D"]
+[node name="Bin" type="MeshInstance3D" parent="."]
 transform = Transform3D(100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 0, 0.631561, 0)
 mesh = SubResource("ArrayMesh_lc274")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("1_sh48f")
 surface_material_override/1 = ExtResource("2_dkbrj")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.64, 0)
-shape = SubResource("CylinderShape3D_xj5nk")

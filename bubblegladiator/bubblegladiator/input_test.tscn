@@ -1,45 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://e2iarx54irmj"]
+[gd_scene load_steps=3 format=3 uid="uid://e2iarx54irmj"]
 
-[ext_resource type="Script" path="res://scripts/playerMovement.gd" id="1_03ynk"]
-[ext_resource type="Script" path="res://scripts/cameraMovement.gd" id="2_nqmdn"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_siweg"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5b8pl"]
+[ext_resource type="PackedScene" uid="uid://bqwaxyfetwqoq" path="res://player_controller.tscn" id="1_p4vlk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_amlcn"]
 albedo_color = Color(0.639216, 1, 0.576471, 1)
 
 [node name="Node3D" type="Node3D"]
 
-[node name="Player" type="Node3D" parent="."]
-
-[node name="CharacterBody3D" type="CharacterBody3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.15499, 0)
-top_level = true
-script = ExtResource("1_03ynk")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Player/CharacterBody3D"]
-mesh = SubResource("CapsuleMesh_siweg")
-skeleton = NodePath("../../..")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Player/CharacterBody3D"]
-shape = SubResource("CapsuleShape3D_5b8pl")
-
-[node name="CameraPosition" type="Node3D" parent="Player"]
-script = ExtResource("2_nqmdn")
-
-[node name="h" type="Node3D" parent="Player/CameraPosition"]
-
-[node name="v" type="Node3D" parent="Player/CameraPosition/h"]
-
-[node name="SpringArm3D" type="SpringArm3D" parent="Player/CameraPosition/h/v"]
-spring_length = 4.0
-margin = 0.5
-
-[node name="Camera3D" type="Camera3D" parent="Player/CameraPosition/h/v/SpringArm3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.013)
-fov = 80.0
+[node name="Player" parent="." instance=ExtResource("1_p4vlk")]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(60.4149, 0, 0, 0, 0.555351, 0, 0, 0, 76.5299, 0, -0.220508, 0)

@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://cwqt6ntm7m5lr"]
 
-[ext_resource type="PackedScene" uid="uid://blps04rf4qa2l" path="res://Assets/NPCs/Raw/Child/Child.tscn" id="1_a5tsx"]
-[ext_resource type="PackedScene" uid="uid://dplghvgu8wbha" path="res://Assets/NPCs/Raw/Player/Player.tscn" id="2_m1134"]
-[ext_resource type="PackedScene" uid="uid://bo16iocawf2lx" path="res://Assets/NPCs/Raw/Townie/Townie F.tscn" id="3_jwuoe"]
-[ext_resource type="PackedScene" uid="uid://b8u3f8u5xgab0" path="res://Assets/NPCs/Raw/Townie/Townie M.tscn" id="4_yfcii"]
+[ext_resource type="PackedScene" uid="uid://blps04rf4qa2l" path="res://Assets/Child/Child.tscn" id="1_a5tsx"]
+[ext_resource type="PackedScene" uid="uid://dplghvgu8wbha" path="res://Assets/Player/Player.tscn" id="2_m1134"]
+[ext_resource type="PackedScene" uid="uid://bo16iocawf2lx" path="res://Assets/Townie/Townie F.tscn" id="3_jwuoe"]
+[ext_resource type="PackedScene" uid="uid://b8u3f8u5xgab0" path="res://Assets/Townie/Townie M.tscn" id="4_yfcii"]
 
 [node name="Node3D" type="Node3D"]
 

@@ -1,6 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://bpnxnmdyi84ke"]
+[gd_scene load_steps=15 format=3 uid="uid://bpnxnmdyi84ke"]
 
 [ext_resource type="Material" uid="uid://cg6h5wb8arvm2" path="res://Assets/Materials/Floor.tres" id="1_3ckyw"]
+[ext_resource type="Sky" uid="uid://deopygpj8a4ss" path="res://Assets/Materials/Sky Arena.tres" id="1_ectjo"]
 [ext_resource type="Material" uid="uid://c1yk65v5qclwo" path="res://Assets/Materials/Wall.tres" id="2_mnpyc"]
 [ext_resource type="PackedScene" uid="uid://bide4r3faft4x" path="res://Assets/Props/Arena Prop.tscn" id="2_o14xa"]
 [ext_resource type="PackedScene" uid="uid://cffsihkxcx6nf" path="res://player_controller.tscn" id="4_0gund"]
@@ -12,18 +13,9 @@
 [ext_resource type="PackedScene" uid="uid://dywa8rm2yrhua" path="res://Assets/Props/Water Bottle.tscn" id="9_ex3ba"]
 [ext_resource type="PackedScene" uid="uid://ufk3187gslts" path="res://Assets/Props/Towel.tscn" id="10_58pf5"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fd141"]
-sky_top_color = Color(0.835294, 0.67451, 0.733333, 1)
-sky_horizon_color = Color(0.862745, 0.803922, 0.823529, 1)
-ground_bottom_color = Color(0.862745, 0.803922, 0.823529, 1)
-ground_horizon_color = Color(0.862745, 0.803922, 0.823529, 1)
-
-[sub_resource type="Sky" id="Sky_my2um"]
-sky_material = SubResource("ProceduralSkyMaterial_fd141")
-
 [sub_resource type="Environment" id="Environment_sk7hd"]
 background_mode = 2
-sky = SubResource("Sky_my2um")
+sky = ExtResource("1_ectjo")
 tonemap_mode = 2
 glow_enabled = true
 
@@ -37,12 +29,21 @@ environment = SubResource("Environment_sk7hd")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0.0514202, 10.6685, -0.0385895)
-light_energy = 0.53
+light_energy = 0.455
+light_indirect_energy = 0.42
 light_volumetric_fog_energy = 5.687
 light_bake_mode = 1
 shadow_enabled = true
 shadow_bias = 0.0
 shadow_blur = 0.0
+
+[node name="Floor" type="CSGMesh3D" parent="."]
+transform = Transform3D(4.10852, 0, 0, 0, 1, 0, 0, 0, 0.955189, 0, 0, 0)
+use_collision = true
+collision_layer = 3
+collision_mask = 3
+mesh = SubResource("PlaneMesh_g8pwo")
+material = ExtResource("1_3ckyw")
 
 [node name="Wall" type="CSGMesh3D" parent="."]
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -17.216, 3.62566, 0)
@@ -51,14 +52,6 @@ collision_layer = 3
 collision_mask = 3
 mesh = SubResource("PlaneMesh_g8pwo")
 material = ExtResource("2_mnpyc")
-
-[node name="Wall5" type="CSGMesh3D" parent="."]
-transform = Transform3D(4.10852, 0, 0, 0, 1, 0, 0, 0, 0.955189, 0, 0, 0)
-use_collision = true
-collision_layer = 3
-collision_mask = 3
-mesh = SubResource("PlaneMesh_g8pwo")
-material = ExtResource("1_3ckyw")
 
 [node name="Wall2" type="CSGMesh3D" parent="."]
 transform = Transform3D(4.37114e-08, -1, -8.74228e-08, -1, -4.37114e-08, 0, -3.82137e-15, 8.74228e-08, -1, 17.2882, 3.62566, 0)
@@ -86,9 +79,6 @@ material = ExtResource("2_mnpyc")
 
 [node name="Arena" parent="." instance=ExtResource("2_o14xa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0216634, 0.0010682, 0.0214312)
-
-[node name="Player" parent="." instance=ExtResource("4_0gund")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.114849, 3.04329, 3.67157)
 
 [node name="Bin2" parent="." instance=ExtResource("7_5rusf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.354, 0, 10.351)
@@ -278,3 +268,6 @@ transform = Transform3D(-0.135871, 0, 0.990726, 0, 1, 0, -0.990726, 0, -0.135871
 
 [node name="Towel4" parent="." instance=ExtResource("10_58pf5")]
 transform = Transform3D(0.263705, 0, 0.964603, 0, 1, 0, -0.964603, 0, 0.263705, -11.8965, 1.55865, -5)
+
+[node name="Player" parent="." instance=ExtResource("4_0gund")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.62367, 1.68582, -6.08215)

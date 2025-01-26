@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cffsihkxcx6nf"]
+[gd_scene load_steps=6 format=3 uid="uid://cffsihkxcx6nf"]
 
 [ext_resource type="Script" path="res://scripts/playerMovement.gd" id="1_mqgtl"]
 [ext_resource type="Script" path="res://scripts/cameraMovement.gd" id="2_inp6y"]
+[ext_resource type="CameraAttributesPractical" uid="uid://civ8slu2d1ouo" path="res://Assets/Materials/Camera Attribute DOF.tres" id="3_y45qj"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_siweg"]
 
@@ -36,4 +37,5 @@ margin = 0.5
 
 [node name="Camera3D" type="Camera3D" parent="CameraPosition/h/v/SpringArm3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.013)
+attributes = ExtResource("3_y45qj")
 fov = 80.0

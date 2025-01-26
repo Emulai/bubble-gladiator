@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=4 uid="uid://dawgk0brqh7nv"]
+[gd_scene load_steps=7 format=4 uid="uid://dawgk0brqh7nv"]
 
+[ext_resource type="PhysicsMaterial" uid="uid://rrno1fvn6rpe" path="res://Assets/Materials/Physics/Bouncy.tres" id="1_nnh8n"]
 [ext_resource type="Material" uid="uid://bj48i1vn67fxb" path="res://Assets/Materials/Child Bubble.tres" id="1_v5kqt"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_uixlo"]
@@ -51,7 +52,8 @@ shadow_mesh = SubResource("ArrayMesh_3bocg")
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
 collision_layer = 3
 collision_mask = 3
-mass = 0.054
+mass = 0.017
+physics_material_override = ExtResource("1_nnh8n")
 gravity_scale = 0.543
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]

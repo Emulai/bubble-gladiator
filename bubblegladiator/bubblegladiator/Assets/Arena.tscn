@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bpnxnmdyi84ke"]
+[gd_scene load_steps=16 format=3 uid="uid://bpnxnmdyi84ke"]
 
 [ext_resource type="Material" uid="uid://cg6h5wb8arvm2" path="res://Assets/Materials/Floor.tres" id="1_3ckyw"]
 [ext_resource type="Material" uid="uid://c1yk65v5qclwo" path="res://Assets/Materials/Wall.tres" id="2_mnpyc"]
@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://ufk3187gslts" path="res://Assets/Props/Towel.tscn" id="10_58pf5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fd141"]
-sky_top_color = Color(0.86469, 0.804198, 0.822103, 1)
+sky_top_color = Color(0.835294, 0.67451, 0.733333, 1)
 sky_horizon_color = Color(0.862745, 0.803922, 0.823529, 1)
 ground_bottom_color = Color(0.862745, 0.803922, 0.823529, 1)
 ground_horizon_color = Color(0.862745, 0.803922, 0.823529, 1)
@@ -27,6 +27,9 @@ sky = SubResource("Sky_my2um")
 tonemap_mode = 2
 glow_enabled = true
 
+[sub_resource type="PlaneMesh" id="PlaneMesh_g8pwo"]
+size = Vector2(9.145, 40.595)
+
 [node name="Arena" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -34,47 +37,52 @@ environment = SubResource("Environment_sk7hd")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0.0514202, 10.6685, -0.0385895)
-light_energy = 1.5
+light_energy = 0.53
+light_volumetric_fog_energy = 5.687
+light_bake_mode = 1
 shadow_enabled = true
+shadow_bias = 0.0
+shadow_blur = 0.0
 
-[node name="Floor" type="CSGBox3D" parent="."]
-transform = Transform3D(50.8818, 0, 0, 0, 0.0745515, 0, 0, 0, 50.8818, 0, -0.0362075, 0)
+[node name="Wall" type="CSGMesh3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -17.216, 3.62566, 0)
 use_collision = true
-collision_layer = 2
-collision_mask = 2
+collision_layer = 3
+collision_mask = 3
+mesh = SubResource("PlaneMesh_g8pwo")
+material = ExtResource("2_mnpyc")
+
+[node name="Wall5" type="CSGMesh3D" parent="."]
+transform = Transform3D(4.10852, 0, 0, 0, 1, 0, 0, 0, 0.955189, 0, 0, 0)
+use_collision = true
+collision_layer = 3
+collision_mask = 3
+mesh = SubResource("PlaneMesh_g8pwo")
 material = ExtResource("1_3ckyw")
 
-[node name="InvisiWall" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 8.25676, 0, 0, 0, 51.3895, -21.6701, 3.54498, 0.0748312)
-material_override = ExtResource("2_mnpyc")
+[node name="Wall2" type="CSGMesh3D" parent="."]
+transform = Transform3D(4.37114e-08, -1, -8.74228e-08, -1, -4.37114e-08, 0, -3.82137e-15, 8.74228e-08, -1, 17.2882, 3.62566, 0)
 use_collision = true
-collision_layer = 2
-collision_mask = 2
-size = Vector3(1, 0.978027, 1)
+collision_layer = 3
+collision_mask = 3
+mesh = SubResource("PlaneMesh_g8pwo")
+material = ExtResource("2_mnpyc")
 
-[node name="InvisiWall2" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 8.25676, 0, 0, 0, 51.3895, 18.2098, 3.54498, 0.0748312)
-material_override = ExtResource("2_mnpyc")
+[node name="Wall3" type="CSGMesh3D" parent="."]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, 0.036105, 3.62566, -17.2521)
 use_collision = true
-collision_layer = 2
-collision_mask = 2
-size = Vector3(1, 0.978027, 1)
+collision_layer = 3
+collision_mask = 3
+mesh = SubResource("PlaneMesh_g8pwo")
+material = ExtResource("2_mnpyc")
 
-[node name="InvisiWall3" type="CSGBox3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, 51.3895, 0, 8.25676, 0, -1, 0, -2.24631e-06, 0.466373, 3.54498, -21.5501)
-material_override = ExtResource("2_mnpyc")
+[node name="Wall4" type="CSGMesh3D" parent="."]
+transform = Transform3D(1.91069e-15, -4.37114e-08, 1, -1, -4.37114e-08, 0, 4.37114e-08, -1, -4.37114e-08, 0.0361034, 3.62566, 17.2521)
 use_collision = true
-collision_layer = 2
-collision_mask = 2
-size = Vector3(1, 0.978027, 1)
-
-[node name="InvisiWall4" type="CSGBox3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, 51.3895, 0, 8.25676, 0, -1, 0, -2.24631e-06, 0.466373, 3.54498, 19.8813)
-material_override = ExtResource("2_mnpyc")
-use_collision = true
-collision_layer = 2
-collision_mask = 2
-size = Vector3(1, 0.978027, 1)
+collision_layer = 3
+collision_mask = 3
+mesh = SubResource("PlaneMesh_g8pwo")
+material = ExtResource("2_mnpyc")
 
 [node name="Arena" parent="." instance=ExtResource("2_o14xa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0216634, 0.0010682, 0.0214312)

@@ -1,11 +1,8 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c1yk65v5qclwo"]
-
-[ext_resource type="Texture2D" uid="uid://bigqxgmegrsmv" path="res://Assets/Materials/Textures/Brick.jpg" id="1_gbsck"]
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c1yk65v5qclwo"]
 
 [resource]
 shading_mode = 0
-albedo_color = Color(0.862745, 0.803922, 0.823529, 1)
-albedo_texture = ExtResource("1_gbsck")
+albedo_color = Color(0.836506, 0.673327, 0.732078, 1)
 uv1_scale = Vector3(-0.415, -1.025, 0.36)
 texture_filter = 0
 disable_receive_shadows = true

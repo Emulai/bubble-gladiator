@@ -25,8 +25,19 @@ func _on_body_entered(body: Node):
 		axis_lock_angular_z = false
 		print(body.transform)
 		var result = body.transform.origin - transform.origin
+		# Avoid negative vertical force applied so we are launching things up, not down
 		result.y = abs(result.y)
-		apply_force(result * 1000)
+		# Clamp the y force so we get nice launch angles
+		if result.y < 0.35:
+			result.y = 0.35
+		elif result.y > 0.6:
+			result.y = 0.6
+		# possibly do a check here for whether the player was charging or not
+		# and use appropriate force multiplier
+		if true:
+			apply_force(result * Global.game_manager.launch_physics.normal_launch_force)
+		else:
+			apply_force(result * Global.game_manager.launch_physics.charged_launch_force)
 		
 		npc_distance = position.distance_to(start_position) 
 		distance_multiplier = npc_distance/100

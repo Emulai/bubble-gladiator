@@ -12,8 +12,8 @@ var isCharging = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	captureMouse()
 	parent = get_parent()
+	#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -58,10 +58,3 @@ func changeAnimIfNotActive(anim: String):
 	var animName = "Player/" + anim
 	if not anims.current_animation == animName:
 		anims.play(animName)
-	
-# Kieron will need to use these to handle menu interaction
-func releaseMouse():
-	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	
-func captureMouse():
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)

@@ -1,26 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://bc0kwi62c2hty"]
+[gd_scene load_steps=3 format=3 uid="uid://bc0kwi62c2hty"]
 
 [ext_resource type="PackedScene" uid="uid://b8u3f8u5xgab0" path="res://Assets/NPCs/Raw/Townie/Townie M.tscn" id="1_a2nc8"]
-[ext_resource type="Script" path="res://scripts/npc_controller.gd" id="1_hql3h"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4idgl"]
 radius = 0.330988
 height = 2.28951
 
-[node name="Townie M RB" type="RigidBody3D"]
-collision_mask = 7
-axis_lock_angular_x = true
-axis_lock_angular_z = true
-mass = 80.0
-contact_monitor = true
-max_contacts_reported = 5
-script = ExtResource("1_hql3h")
+[node name="TownieMInteractable" type="Node3D"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.14205, 0)
 shape = SubResource("CapsuleShape3D_4idgl")
 
-[node name="Townie M" parent="." instance=ExtResource("1_a2nc8")]
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[node name="Townie M" parent="RigidBody3D" instance=ExtResource("1_a2nc8")]

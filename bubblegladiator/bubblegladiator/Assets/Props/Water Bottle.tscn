@@ -108,17 +108,15 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_2h4x4")
 
-[node name="Water Bottle RB" type="RigidBody3D"]
-collision_mask = 7
-mass = 2.0
-contact_monitor = true
-max_contacts_reported = 5
+[node name="WaterBottle" type="Node3D"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.66, 0)
 shape = SubResource("CylinderShape3D_eipmu")
 
-[node name="Water Bottle" type="MeshInstance3D" parent="."]
+[node name="Water Bottle" type="MeshInstance3D" parent="RigidBody3D"]
 transform = Transform3D(141.112, 0, 0, 0, -1.68218e-05, 100, 0, -141.112, -1.19209e-05, 0, 0, 0)
 mesh = SubResource("ArrayMesh_hhsb0")
 skeleton = NodePath("")

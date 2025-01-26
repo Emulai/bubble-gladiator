@@ -47,17 +47,18 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ibw7g")
 
-[node name="Landing Matt RB" type="RigidBody3D"]
-collision_mask = 7
-mass = 50.0
-contact_monitor = true
-max_contacts_reported = 5
+[node name="LandingMatt" type="Node3D"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+collision_layer = 3
+collision_mask = 3
+mass = 6.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00337219, 0.126732, 0.0232086)
 shape = SubResource("BoxShape3D_xhjtl")
 
-[node name="Landing Matt" type="MeshInstance3D" parent="."]
+[node name="Landing Matt" type="MeshInstance3D" parent="RigidBody3D"]
 transform = Transform3D(100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 0, 0, 0)
 mesh = SubResource("ArrayMesh_56fe1")
 skeleton = NodePath("")

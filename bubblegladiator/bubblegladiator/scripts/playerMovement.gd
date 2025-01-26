@@ -4,11 +4,9 @@ var speed = 10.0
 var turnSpeed = 30
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var parent
-var isCharging = false
 
 @onready var cameraH = $"../CameraPosition/h"
 @onready var cameraV = $"../CameraPosition/h/v"
-@onready var anims: AnimationPlayer = $AnimTest/AnimationPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -19,16 +17,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	parent.position = position
 	
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("charge"):
-		isCharging = true
-	elif event.is_action_released("charge"):
-		isCharging = false
-	
 func _physics_process(delta: float) -> void:
 	var inputDir = Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
-	updateMoveAnimation(inputDir)
-	
 	var direction = (cameraH.transform.basis * Vector3(inputDir.x, 0, inputDir.y))
 	
 	if not is_on_floor():

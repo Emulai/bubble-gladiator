@@ -1,9 +1,5 @@
 extends RigidBody3D
 
-var start_position = position
-@export var distance_multiplier = 0
-@export var npc_distance = 0
-
 func _ready() -> void:
 	pass
 	#process_mode = PROCESS_MODE_DISABLED
@@ -20,6 +16,7 @@ func _ready() -> void:
 
 
 func _on_body_entered(body: Node):
+	print("test")
 	if body.name == "PlayerBody3D":
 		axis_lock_angular_x = false
 		axis_lock_angular_z = false

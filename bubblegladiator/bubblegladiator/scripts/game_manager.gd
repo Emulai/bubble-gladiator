@@ -39,7 +39,7 @@ func _process(delta: float) -> void:
 			change_3d_scene("")
 			# We should change to some kind of game over scene, not just
 			# straight back to the main menu.
-			change_ui_scene("res://main_menu/main_menu_ui.tscn")
+			change_ui_scene("res://game_end_scene/end_game_ui.tscn")
 	
 	if Input.is_action_just_pressed("pause"):
 		pause_menu()

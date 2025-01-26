@@ -1,0 +1,87 @@
+[gd_scene load_steps=2 format=3 uid="uid://d4mkwybdu1hd1"]
+
+[ext_resource type="Script" path="res://game_end_scene/scripts/end_game_ui.gd" id="1_yqdvb"]
+
+[node name="EndGameUi" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yqdvb")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -77.0
+offset_top = -50.5
+offset_right = 77.0
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Retry" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Retry"
+
+[node name="QuitToMenu" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Quit to Main Menu"
+
+[node name="QuitGame" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Quit Game"
+
+[node name="TimeUpAndScore" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.51
+anchor_top = 0.274
+anchor_right = 0.51
+anchor_bottom = 0.274
+offset_left = -175.52
+offset_top = -61.552
+offset_right = 174.48
+offset_bottom = 61.448
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TimeUp" type="LineEdit" parent="TimeUpAndScore"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 1.0
+offset_right = 349.0
+offset_bottom = 71.0
+text = "Time Up!"
+alignment = 1
+editable = false
+context_menu_enabled = false
+selecting_enabled = false
+
+[node name="ScoreText" type="LineEdit" parent="TimeUpAndScore"]
+layout_mode = 0
+offset_left = 106.0
+offset_top = 81.0
+offset_right = 173.063
+offset_bottom = 112.0
+text = "Score:"
+alignment = 2
+
+[node name="Score" type="Label" parent="TimeUpAndScore"]
+layout_mode = 0
+offset_left = 172.0
+offset_top = 82.0
+offset_right = 219.0
+offset_bottom = 112.0
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/QuitToMenu" to="." method="_on_quit_to_menu_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/QuitGame" to="." method="_on_quit_game_pressed"]

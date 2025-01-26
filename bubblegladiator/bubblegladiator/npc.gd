@@ -1,6 +1,15 @@
 extends Node3D
 
-var npc_position = position
+var start_position = position
+
+#collision occurs and npc has moved to new position
+
+@export var npc_distance = position.distance_to(start_position) 
+@export var distance_multiplier = npc_distance/100
+
+		
+
+  
 
 
 

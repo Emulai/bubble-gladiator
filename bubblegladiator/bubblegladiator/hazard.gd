@@ -4,7 +4,7 @@ extends Node3D
 
 func _on_body_entered(body):
 	if body.name == "npc":
-		scorevalue = scorevalue*$canvaslayer.distance 
+		scorevalue = scorevalue*body.distance_multiplier 
 		$canvaslayer.currentscore += scorevalue
 		$canvaslayer.update_score($canvaslayer.currentscore)
 

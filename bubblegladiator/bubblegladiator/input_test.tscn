@@ -12,4 +12,6 @@ albedo_color = Color(0.639216, 1, 0.576471, 1)
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(60.4149, 0, 0, 0, 0.555351, 0, 0, 0, 76.5299, 0, -0.220508, 0)
 use_collision = true
+collision_layer = 2
+collision_mask = 2
 material = SubResource("StandardMaterial3D_amlcn")

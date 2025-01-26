@@ -1,27 +1,35 @@
 [gd_scene load_steps=5 format=3 uid="uid://c2vbo4wtognle"]
 
+
 [ext_resource type="Script" path="res://scripts/playerMovement.gd" id="1_mqgtl"]
 [ext_resource type="Script" path="res://scripts/cameraMovement.gd" id="2_inp6y"]
+[ext_resource type="PackedScene" uid="uid://dplghvgu8wbha" path="res://Assets/Player/Player.tscn" id="2_q87ej"]
+[ext_resource type="CameraAttributesPractical" uid="uid://civ8slu2d1ouo" path="res://Assets/Materials/Camera Attribute DOF.tres" id="3_y45qj"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_siweg"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_kddpd"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5b8pl"]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_iqkbq"]
 
 [node name="Player" type="Node3D"]
 
 [node name="PlayerBody3D" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.15499, 0)
+
 top_level = true
 collision_layer = 4
 collision_mask = 6
 script = ExtResource("1_mqgtl")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="PlayerBody3D"]
-mesh = SubResource("CapsuleMesh_siweg")
-skeleton = NodePath("../../..")
+[node name="AnimTest" parent="CharacterBody3D" instance=ExtResource("2_q87ej")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerBody3D"]
-shape = SubResource("CapsuleShape3D_5b8pl")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 1.2834, 0)
+shape = SubResource("SphereShape3D_kddpd")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="CharacterBody3D"]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -0.0443041, 0.617054, 0)
+shape = SubResource("CylinderShape3D_iqkbq")
 
 [node name="CameraPosition" type="Node3D" parent="."]
 script = ExtResource("2_inp6y")
@@ -31,10 +39,12 @@ script = ExtResource("2_inp6y")
 [node name="v" type="Node3D" parent="CameraPosition/h"]
 
 [node name="SpringArm3D" type="SpringArm3D" parent="CameraPosition/h/v"]
+
 collision_mask = 2
 spring_length = 4.0
 margin = 0.5
 
 [node name="Camera3D" type="Camera3D" parent="CameraPosition/h/v/SpringArm3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.013)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.43402, 4.013)
+attributes = ExtResource("3_y45qj")
 fov = 80.0

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://8i8duyq67ok7"
-path="res://.godot/imported/Townie F Base.fbx-c0ced815488b4c47e56252ccc77b5935.scn"
+uid="uid://m7nays8n0783"
+path="res://.godot/imported/Townie M Base.fbx-48f514a41441d873615019d1016d9033.scn"
 
 [deps]
 
-source_file="res://Assets/Townie/Models/Townie F Base.fbx"
-dest_files=["res://.godot/imported/Townie F Base.fbx-c0ced815488b4c47e56252ccc77b5935.scn"]
+source_file="res://Assets/NPCs/Raw/Townie/Models/Townie M Base.fbx"
+dest_files=["res://.godot/imported/Townie M Base.fbx-48f514a41441d873615019d1016d9033.scn"]
 
 [params]
 

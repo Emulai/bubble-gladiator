@@ -1,5 +1,9 @@
 extends RigidBody3D
 
+var start_position = position
+@export var distance_multiplier = 0
+@export var npc_distance = 0
+
 func _ready() -> void:
 	pass
 	#process_mode = PROCESS_MODE_DISABLED
@@ -34,6 +38,9 @@ func _on_body_entered(body: Node):
 			apply_force(result * Global.game_manager.launch_physics.normal_launch_force)
 		else:
 			apply_force(result * Global.game_manager.launch_physics.charged_launch_force)
+		
+		npc_distance = position.distance_to(start_position) 
+		distance_multiplier = npc_distance/100
 		
 	# TODO
 	# Add realistic mass to objects

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://m7nays8n0783"
-path="res://.godot/imported/Townie M Base.fbx-703d5993692fc0e7ba8fea4229662451.scn"
+uid="uid://cw0vbeocpiptv"
+path="res://.godot/imported/Water Bottle.fbx-df96a3a973ce91e6ab6e1f25d6e27d2f.scn"
 
 [deps]
 
-source_file="res://Assets/Townie/Models/Townie M Base.fbx"
-dest_files=["res://.godot/imported/Townie M Base.fbx-703d5993692fc0e7ba8fea4229662451.scn"]
+source_file="res://Assets/Props/Raw/Water Bottle.fbx"
+dest_files=["res://.godot/imported/Water Bottle.fbx-df96a3a973ce91e6ab6e1f25d6e27d2f.scn"]
 
 [params]
 

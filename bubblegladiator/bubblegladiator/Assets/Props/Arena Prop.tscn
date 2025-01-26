@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bide4r3faft4x"]
 
-[ext_resource type="PackedScene" uid="uid://2y4suhkmcg05" path="res://Assets/Props/Models/Arena.fbx" id="1_yrwkq"]
+[ext_resource type="PackedScene" uid="uid://2y4suhkmcg05" path="res://Assets/Props/Raw/Arena.fbx" id="1_yrwkq"]
 [ext_resource type="Material" uid="uid://c5h3yavc6shv2" path="res://Assets/Materials/Prop Materials/Red_Shiny.tres" id="2_3ij04"]
 [ext_resource type="Material" uid="uid://inrqu4hati70" path="res://Assets/Materials/Prop Materials/White_Shiny.tres" id="3_qngaq"]
 

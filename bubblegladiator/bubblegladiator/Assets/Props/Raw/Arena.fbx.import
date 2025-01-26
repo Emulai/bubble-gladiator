@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cjgvbymao3kyf"
-path="res://.godot/imported/Landing Matt.fbx-402343e3e3d99320abb675259b318c77.scn"
+uid="uid://2y4suhkmcg05"
+path="res://.godot/imported/Arena.fbx-d7c45172fc6b31db593634d0746f8e53.scn"
 
 [deps]
 
-source_file="res://Assets/Props/Models/Landing Matt.fbx"
-dest_files=["res://.godot/imported/Landing Matt.fbx-402343e3e3d99320abb675259b318c77.scn"]
+source_file="res://Assets/Props/Raw/Arena.fbx"
+dest_files=["res://.godot/imported/Arena.fbx-d7c45172fc6b31db593634d0746f8e53.scn"]
 
 [params]
 

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b7pnu0qws2n7b"
-path="res://.godot/imported/Bench.fbx-fbd3a89f9eec97daf195339b1844f7ea.scn"
+uid="uid://b1ivo7ngufqwt"
+path="res://.godot/imported/Bag.fbx-89bdb0c6f9566a10153c974751ae737b.scn"
 
 [deps]
 
-source_file="res://Assets/Props/Models/Bench.fbx"
-dest_files=["res://.godot/imported/Bench.fbx-fbd3a89f9eec97daf195339b1844f7ea.scn"]
+source_file="res://Assets/Props/Raw/Bag.fbx"
+dest_files=["res://.godot/imported/Bag.fbx-89bdb0c6f9566a10153c974751ae737b.scn"]
 
 [params]
 

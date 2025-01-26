@@ -1,0 +1,280 @@
+[gd_scene load_steps=16 format=3 uid="uid://bpnxnmdyi84ke"]
+
+[ext_resource type="Material" uid="uid://cg6h5wb8arvm2" path="res://Assets/Materials/Floor.tres" id="1_3ckyw"]
+[ext_resource type="Material" uid="uid://c1yk65v5qclwo" path="res://Assets/Materials/Wall.tres" id="2_mnpyc"]
+[ext_resource type="PackedScene" uid="uid://bide4r3faft4x" path="res://Assets/Props/Arena Prop.tscn" id="2_o14xa"]
+[ext_resource type="PackedScene" uid="uid://cffsihkxcx6nf" path="res://player_controller.tscn" id="4_0gund"]
+[ext_resource type="PackedScene" uid="uid://b14ckfwf71a07" path="res://Assets/Props/Bench.tscn" id="4_g7vge"]
+[ext_resource type="PackedScene" uid="uid://dbsxt7375doxi" path="res://Assets/Props/Landing Matt.tscn" id="6_gvnjp"]
+[ext_resource type="PackedScene" uid="uid://bwklk4ibaweg3" path="res://Assets/Props/Bin.tscn" id="7_5rusf"]
+[ext_resource type="PackedScene" uid="uid://bfsthpugspjh1" path="res://Assets/Props/Bag.tscn" id="7_q7cx8"]
+[ext_resource type="PackedScene" uid="uid://dawgk0brqh7nv" path="res://Assets/Props/Bubble Empty.tscn" id="8_jpwgv"]
+[ext_resource type="PackedScene" uid="uid://dywa8rm2yrhua" path="res://Assets/Props/Water Bottle.tscn" id="9_ex3ba"]
+[ext_resource type="PackedScene" uid="uid://ufk3187gslts" path="res://Assets/Props/Towel.tscn" id="10_58pf5"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fd141"]
+sky_top_color = Color(0.835294, 0.67451, 0.733333, 1)
+sky_horizon_color = Color(0.862745, 0.803922, 0.823529, 1)
+ground_bottom_color = Color(0.862745, 0.803922, 0.823529, 1)
+ground_horizon_color = Color(0.862745, 0.803922, 0.823529, 1)
+
+[sub_resource type="Sky" id="Sky_my2um"]
+sky_material = SubResource("ProceduralSkyMaterial_fd141")
+
+[sub_resource type="Environment" id="Environment_sk7hd"]
+background_mode = 2
+sky = SubResource("Sky_my2um")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_g8pwo"]
+size = Vector2(9.145, 40.595)
+
+[node name="Arena" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_sk7hd")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0.0514202, 10.6685, -0.0385895)
+light_energy = 0.53
+light_volumetric_fog_energy = 5.687
+light_bake_mode = 1
+shadow_enabled = true
+shadow_bias = 0.0
+shadow_blur = 0.0
+
+[node name="Wall" type="CSGMesh3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -17.216, 3.62566, 0)
+use_collision = true
+collision_layer = 3
+collision_mask = 3
+mesh = SubResource("PlaneMesh_g8pwo")
+material = ExtResource("2_mnpyc")
+
+[node name="Wall5" type="CSGMesh3D" parent="."]
+transform = Transform3D(4.10852, 0, 0, 0, 1, 0, 0, 0, 0.955189, 0, 0, 0)
+use_collision = true
+collision_layer = 3
+collision_mask = 3
+mesh = SubResource("PlaneMesh_g8pwo")
+material = ExtResource("1_3ckyw")
+
+[node name="Wall2" type="CSGMesh3D" parent="."]
+transform = Transform3D(4.37114e-08, -1, -8.74228e-08, -1, -4.37114e-08, 0, -3.82137e-15, 8.74228e-08, -1, 17.2882, 3.62566, 0)
+use_collision = true
+collision_layer = 3
+collision_mask = 3
+mesh = SubResource("PlaneMesh_g8pwo")
+material = ExtResource("2_mnpyc")
+
+[node name="Wall3" type="CSGMesh3D" parent="."]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, 0.036105, 3.62566, -17.2521)
+use_collision = true
+collision_layer = 3
+collision_mask = 3
+mesh = SubResource("PlaneMesh_g8pwo")
+material = ExtResource("2_mnpyc")
+
+[node name="Wall4" type="CSGMesh3D" parent="."]
+transform = Transform3D(1.91069e-15, -4.37114e-08, 1, -1, -4.37114e-08, 0, 4.37114e-08, -1, -4.37114e-08, 0.0361034, 3.62566, 17.2521)
+use_collision = true
+collision_layer = 3
+collision_mask = 3
+mesh = SubResource("PlaneMesh_g8pwo")
+material = ExtResource("2_mnpyc")
+
+[node name="Arena" parent="." instance=ExtResource("2_o14xa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0216634, 0.0010682, 0.0214312)
+
+[node name="Player" parent="." instance=ExtResource("4_0gund")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.114849, 3.04329, 3.67157)
+
+[node name="Bin2" parent="." instance=ExtResource("7_5rusf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.354, 0, 10.351)
+
+[node name="Bin3" parent="." instance=ExtResource("7_5rusf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0367, 0.00106825, 10.3691)
+
+[node name="Bin4" parent="." instance=ExtResource("7_5rusf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.2091, 0.00106825, -11.4387)
+
+[node name="Bin6" parent="." instance=ExtResource("7_5rusf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5225, 0.00106825, -11.0827)
+
+[node name="Bench" parent="." instance=ExtResource("4_g7vge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.27349, 0.00106825, 11.2434)
+
+[node name="Bench2" parent="." instance=ExtResource("4_g7vge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9119, 0.00106825, 11.2434)
+
+[node name="Bench5" parent="." instance=ExtResource("4_g7vge")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -11.838, 0.00106825, 3.93682)
+
+[node name="Bench6" parent="." instance=ExtResource("4_g7vge")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -11.838, 0.00106825, -4.24856)
+
+[node name="Bench7" parent="." instance=ExtResource("4_g7vge")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 11.3683, 0.00106825, 3.93682)
+
+[node name="Bench8" parent="." instance=ExtResource("4_g7vge")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 11.3683, 0.00106825, -4.24856)
+
+[node name="Bench3" parent="." instance=ExtResource("4_g7vge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.27349, 0.00106825, -11.6828)
+
+[node name="Bench4" parent="." instance=ExtResource("4_g7vge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9119, 0.00106825, -11.6828)
+
+[node name="LandingMatt" parent="." instance=ExtResource("6_gvnjp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.31269, 0.00106711, 10.9903)
+
+[node name="LandingMatt2" parent="." instance=ExtResource("6_gvnjp")]
+transform = Transform3D(0.997002, 0, 0.0773803, 0, 1, 0, -0.0773803, 0, 0.997002, 8.31269, 0.357451, 10.9903)
+
+[node name="LandingMatt3" parent="." instance=ExtResource("6_gvnjp")]
+transform = Transform3D(0.998908, 0, -0.0467229, 0, 1, 0, 0.0467229, 0, 0.998908, 8.31269, 0.717047, 10.9903)
+
+[node name="LandingMatt4" parent="." instance=ExtResource("6_gvnjp")]
+transform = Transform3D(0.996512, 0, 0.0834517, 0, 1, 0, -0.0834517, 0, 0.996512, 8.31269, 1.02728, 10.6217)
+
+[node name="LandingMatt5" parent="." instance=ExtResource("6_gvnjp")]
+transform = Transform3D(0.994953, 0, -0.100344, 0, 1, 0, 0.100344, 0, 0.994953, 8.31269, 1.50061, 11.2833)
+
+[node name="LandingMatt6" parent="." instance=ExtResource("6_gvnjp")]
+transform = Transform3D(0.101386, -0.789138, 0.60579, 0, 0.608928, 0.793226, -0.994847, -0.0804221, 0.0617368, 6.80991, 1.33451, 10.4747)
+
+[node name="LandingMatt7" parent="." instance=ExtResource("6_gvnjp")]
+transform = Transform3D(-0.0231061, 0, 0.999733, 0, 1, 0, -0.999733, 0, -0.0231061, 5.58283, 0.00106825, 7.93804)
+
+[node name="LandingMatt8" parent="." instance=ExtResource("6_gvnjp")]
+transform = Transform3D(0.0233155, 0, 0.999728, 0, 1, 0, -0.999728, 0, 0.0233155, 2.61384, 0.00106825, 7.93804)
+
+[node name="LandingMatt9" parent="." instance=ExtResource("6_gvnjp")]
+transform = Transform3D(0.0559261, 0, 0.998435, 0, 1, 0, -0.998435, 0, 0.0559261, -0.127711, 0.00106825, 7.93804)
+
+[node name="LandingMatt10" parent="." instance=ExtResource("6_gvnjp")]
+transform = Transform3D(0.00993082, 0, 0.999951, 0, 1, 0, -0.999951, 0, 0.00993082, -3.04349, 0.00106825, 7.93804)
+
+[node name="LandingMatt11" parent="." instance=ExtResource("6_gvnjp")]
+transform = Transform3D(0.0518131, 0, 0.998657, 0, 1, 0, -0.998657, 0, 0.0518131, -5.80859, 0.00106825, 7.93804)
+
+[node name="LandingMatt12" parent="." instance=ExtResource("6_gvnjp")]
+transform = Transform3D(0.0231061, 0, -0.999733, 0, 1, 0, 0.999733, 0, 0.0231061, -5.89608, 0.00106825, -8.18538)
+
+[node name="LandingMatt13" parent="." instance=ExtResource("6_gvnjp")]
+transform = Transform3D(-0.0233155, 0, -0.999728, 0, 1, 0, 0.999728, 0, -0.0233155, -2.92709, 0.00106825, -8.18538)
+
+[node name="LandingMatt14" parent="." instance=ExtResource("6_gvnjp")]
+transform = Transform3D(-0.055926, 0, -0.998435, 0, 1, 0, 0.998435, 0, -0.055926, -0.185537, 0.00106825, -8.18538)
+
+[node name="LandingMatt15" parent="." instance=ExtResource("6_gvnjp")]
+transform = Transform3D(-0.00993073, 0, -0.999951, 0, 1, 0, 0.999951, 0, -0.00993073, 2.73024, 0.00106825, -8.18538)
+
+[node name="LandingMatt16" parent="." instance=ExtResource("6_gvnjp")]
+transform = Transform3D(-0.051813, 0, -0.998657, 0, 1, 0, 0.998657, 0, -0.051813, 5.49535, 0.00106825, -8.18538)
+
+[node name="LandingMatt17" parent="." instance=ExtResource("6_gvnjp")]
+transform = Transform3D(-0.999733, 0, -0.0231061, 0, 1, 0, 0.0231061, 0, -0.999733, 8.09315, 0.0010673, -5.74914)
+
+[node name="LandingMatt18" parent="." instance=ExtResource("6_gvnjp")]
+transform = Transform3D(-0.999728, 0, 0.0233155, 0, 1, 0, -0.0233155, 0, -0.999728, 8.09315, 0.0010673, -2.78015)
+
+[node name="LandingMatt19" parent="." instance=ExtResource("6_gvnjp")]
+transform = Transform3D(-0.998435, 0, 0.0559261, 0, 1, 0, -0.0559261, 0, -0.998435, 8.09315, 0.0010673, -0.0385981)
+
+[node name="LandingMatt20" parent="." instance=ExtResource("6_gvnjp")]
+transform = Transform3D(-0.999951, 0, 0.00993077, 0, 1, 0, -0.00993077, 0, -0.999951, 8.09315, 0.0010673, 2.87718)
+
+[node name="LandingMatt21" parent="." instance=ExtResource("6_gvnjp")]
+transform = Transform3D(-0.998657, 0, 0.0518131, 0, 1, 0, -0.0518131, 0, -0.998657, 8.09315, 0.0010673, 5.64228)
+
+[node name="LandingMatt22" parent="." instance=ExtResource("6_gvnjp")]
+transform = Transform3D(0.999733, 0, 0.0231062, 0, 1, 0, -0.0231062, 0, 0.999733, -8.22237, 0.0010673, 5.72977)
+
+[node name="LandingMatt23" parent="." instance=ExtResource("6_gvnjp")]
+transform = Transform3D(0.999728, 0, -0.0233154, 0, 1, 0, 0.0233154, 0, 0.999728, -8.22237, 0.0010673, 2.76078)
+
+[node name="LandingMatt24" parent="." instance=ExtResource("6_gvnjp")]
+transform = Transform3D(0.998435, 0, -0.055926, 0, 1, 0, 0.055926, 0, 0.998435, -8.22237, 0.0010673, 0.019227)
+
+[node name="LandingMatt25" parent="." instance=ExtResource("6_gvnjp")]
+transform = Transform3D(0.999951, 0, -0.00993068, 0, 1, 0, 0.00993068, 0, 0.999951, -8.22238, 0.0010673, -2.89655)
+
+[node name="LandingMatt26" parent="." instance=ExtResource("6_gvnjp")]
+transform = Transform3D(0.998657, 0, -0.051813, 0, 1, 0, 0.051813, 0, 0.998657, -8.22238, 0.0010673, -5.66166)
+
+[node name="Bag" parent="." instance=ExtResource("7_q7cx8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.71949, 0.751556, 11.1657)
+
+[node name="Bag2" parent="." instance=ExtResource("7_q7cx8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.84167, 0.0460685, -11.465)
+
+[node name="Bag3" parent="." instance=ExtResource("7_q7cx8")]
+transform = Transform3D(0.977523, 0, -0.21083, 0, 1, 0, 0.21083, 0, 0.977523, 4.18125, 0.00106825, -11.4164)
+
+[node name="BubbleEmpty" parent="." instance=ExtResource("8_jpwgv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.1811, 1.56419, -9.9914)
+
+[node name="BubbleEmpty2" parent="." instance=ExtResource("8_jpwgv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.7861, 1.56419, -9.9914)
+
+[node name="BubbleEmpty3" parent="." instance=ExtResource("8_jpwgv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.7861, 1.56419, -13.492)
+
+[node name="BubbleEmpty4" parent="." instance=ExtResource("8_jpwgv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.7861, 1.56419, -10.492)
+
+[node name="BubbleEmpty5" parent="." instance=ExtResource("8_jpwgv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.7861, 1.56419, -10.492)
+
+[node name="BubbleEmpty6" parent="." instance=ExtResource("8_jpwgv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.7861, 1.56419, -11.9957)
+
+[node name="BubbleEmpty7" parent="." instance=ExtResource("8_jpwgv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5257, 1.56419, 6.17278)
+
+[node name="BubbleEmpty8" parent="." instance=ExtResource("8_jpwgv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3065, 1.56419, 7.6671)
+
+[node name="BubbleEmpty9" parent="." instance=ExtResource("8_jpwgv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3065, 1.56419, 7.6671)
+
+[node name="BubbleEmpty10" parent="." instance=ExtResource("8_jpwgv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.00189, 1.56419, -8.16607)
+
+[node name="BubbleEmpty11" parent="." instance=ExtResource("8_jpwgv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.35467, 1.56419, -8.16607)
+
+[node name="BubbleEmpty12" parent="." instance=ExtResource("8_jpwgv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.35467, 1.56419, -6.48569)
+
+[node name="WaterBottle" parent="." instance=ExtResource("9_ex3ba")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.79846, -11.7371)
+
+[node name="WaterBottle2" parent="." instance=ExtResource("9_ex3ba")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.13222, 0.00106825, -11.014)
+
+[node name="WaterBottle3" parent="." instance=ExtResource("9_ex3ba")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6623, 0.00106825, -11.5864)
+
+[node name="WaterBottle4" parent="." instance=ExtResource("9_ex3ba")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.41628, 0.00106768, 11.1506)
+
+[node name="WaterBottle5" parent="." instance=ExtResource("9_ex3ba")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5678, 0.751557, 11.2971)
+
+[node name="WaterBottle6" parent="." instance=ExtResource("9_ex3ba")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.75097, 0.00106825, 11.4517)
+
+[node name="Towel" parent="." instance=ExtResource("10_58pf5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 1, -3)
+
+[node name="Towel2" parent="." instance=ExtResource("10_58pf5")]
+transform = Transform3D(0.0555427, 0, 0.998456, 0, 1, 0, -0.998456, 0, 0.0555427, -11.8965, 1, -5)
+
+[node name="Towel3" parent="." instance=ExtResource("10_58pf5")]
+transform = Transform3D(-0.135871, 0, 0.990726, 0, 1, 0, -0.990726, 0, -0.135871, -11.8965, 1.27437, -5)
+
+[node name="Towel4" parent="." instance=ExtResource("10_58pf5")]
+transform = Transform3D(0.263705, 0, 0.964603, 0, 1, 0, -0.964603, 0, 0.263705, -11.8965, 1.55865, -5)

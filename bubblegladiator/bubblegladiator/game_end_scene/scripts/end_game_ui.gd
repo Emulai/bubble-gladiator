@@ -12,6 +12,7 @@ func _process(delta: float) -> void:
 
 
 func _on_retry_pressed() -> void:
+	Global.game_manager.reset_score()
 	Global.game_manager.change_ui_scene("") # Pressing start we close the main menu UI
 	Global.game_manager.change_3d_scene("res://intro_scene/intro_level.tscn")
 	# Capture the mouse for the 3d scene
@@ -19,6 +20,7 @@ func _on_retry_pressed() -> void:
 
 
 func _on_quit_to_menu_pressed() -> void:
+	Global.game_manager.reset_score()
 	Global.game_manager.clean_up_3d_scene()
 	Global.game_manager.change_ui_scene("res://main_menu/main_menu_ui.tscn")
 	Global.game_manager.change_3d_scene("")

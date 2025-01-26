@@ -121,3 +121,6 @@ func add_to_score(score: float, why: String):
 
 func get_score():
 	return totalScore
+	
+func reset_score():
+	totalScore = 0

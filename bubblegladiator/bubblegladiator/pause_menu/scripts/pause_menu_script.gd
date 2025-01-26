@@ -11,6 +11,7 @@ func _on_options_pressed() -> void:
 
 
 func _on_quit_to_menu_pressed() -> void:
+	Global.game_manager.reset_score()
 	Global.game_manager.clean_up_3d_scene()
 	Global.game_manager.change_ui_scene("res://main_menu/main_menu_ui.tscn")
 	Global.game_manager.change_3d_scene("")

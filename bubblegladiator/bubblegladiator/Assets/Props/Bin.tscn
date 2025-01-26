@@ -86,6 +86,7 @@ mass = 200.0
 contact_monitor = true
 max_contacts_reported = 5
 script = ExtResource("1_vlsvr")
+hazardMult = 5
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.64, 0)

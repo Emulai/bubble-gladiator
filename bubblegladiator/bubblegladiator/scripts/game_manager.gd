@@ -46,7 +46,7 @@ func _process(delta: float) -> void:
 
 func clean_up_3d_scene() -> void:
 	# Perform clean up for exiting a 3d scene, e.g. reset timer, unpause, etc
-	timeLimit = 10
+	timeLimit = 30
 	oneSecond = 0
 	paused = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)

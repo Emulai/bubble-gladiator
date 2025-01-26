@@ -10,7 +10,7 @@ var current_ui_scene
 var paused = false
 
 # Track the time limit
-var timeLimit = 10
+var timeLimit = 30
 var oneSecond = 0
 
 var launch_physics = {

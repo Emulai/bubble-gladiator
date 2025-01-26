@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://scripts/playerMovement.gd" id="1_mqgtl"]
 [ext_resource type="Script" path="res://scripts/cameraMovement.gd" id="2_inp6y"]
 [ext_resource type="PackedScene" uid="uid://dplghvgu8wbha" path="res://Assets/Player/Player.tscn" id="2_q87ej"]
+[ext_resource type="CameraAttributesPractical" uid="uid://civ8slu2d1ouo" path="res://Assets/Materials/Camera Attribute DOF.tres" id="3_y45qj"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_kddpd"]
 
@@ -10,10 +11,13 @@
 
 [node name="Player" type="Node3D"]
 
-[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+[node name="PlayerBody3D" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.15499, 0)
+
 top_level = true
-collision_layer = 3
-collision_mask = 3
+collision_layer = 4
+collision_mask = 6
+
 script = ExtResource("1_mqgtl")
 
 [node name="AnimTest" parent="CharacterBody3D" instance=ExtResource("2_q87ej")]
@@ -41,4 +45,5 @@ margin = 0.5
 
 [node name="Camera3D" type="Camera3D" parent="CameraPosition/h/v/SpringArm3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.43402, 4.013)
+attributes = ExtResource("3_y45qj")
 fov = 80.0

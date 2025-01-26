@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cn4kx0pl2atnm"]
+
+[ext_resource type="PackedScene" uid="uid://djvwje46uq316" path="res://Assets/NPCs/Raw/Player/Player Alt Colour.tscn" id="1_gl52q"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_or2px"]
+radius = 0.762402
+height = 2.45388
+
+[node name="WrestlerInteractable" type="Node3D"]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.23294, 0)
+shape = SubResource("CapsuleShape3D_or2px")
+
+[node name="AnimTest" parent="RigidBody3D" instance=ExtResource("1_gl52q")]

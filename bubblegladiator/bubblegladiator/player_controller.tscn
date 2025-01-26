@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/playerMovement.gd" id="1_mqgtl"]
 [ext_resource type="Script" path="res://scripts/cameraMovement.gd" id="2_inp6y"]
 [ext_resource type="PackedScene" uid="uid://dplghvgu8wbha" path="res://Assets/NPCs/Raw/Player/Player.tscn" id="2_q87ej"]
-[ext_resource type="CameraAttributesPractical" path="res://Assets/Materials/Camera Attribute DOF.tres" id="3_y45qj"]
+[ext_resource type="CameraAttributesPractical" uid="uid://civ8slu2d1ouo" path="res://Assets/Materials/Camera Attribute DOF.tres" id="3_y45qj"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_kddpd"]
 
@@ -12,19 +12,21 @@
 [node name="Player" type="Node3D"]
 
 [node name="PlayerBody3D" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.15499, 0)
 top_level = true
 collision_layer = 4
 collision_mask = 6
-
 script = ExtResource("1_mqgtl")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="PlayerBody3D"]
-mesh = SubResource("CapsuleMesh_siweg")
-skeleton = NodePath("../../..")
+[node name="AnimTest" parent="PlayerBody3D" instance=ExtResource("2_q87ej")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerBody3D"]
-shape = SubResource("CapsuleShape3D_5b8pl")
+transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 1.23949, 0.0166462)
+shape = SubResource("SphereShape3D_kddpd")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="PlayerBody3D"]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -0.0443041, 0.609589, 0)
+shape = SubResource("CylinderShape3D_iqkbq")
 
 [node name="CameraPosition" type="Node3D" parent="."]
 script = ExtResource("2_inp6y")

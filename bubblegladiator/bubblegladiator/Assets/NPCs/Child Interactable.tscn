@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bpmlqcdvbrdkd"]
+[gd_scene load_steps=5 format=3 uid="uid://bpmlqcdvbrdkd"]
 
 [ext_resource type="Script" path="res://scripts/npc_controller.gd" id="1_3nrxh"]
+[ext_resource type="PhysicsMaterial" uid="uid://rrno1fvn6rpe" path="res://Assets/Materials/Physics/Bouncy.tres" id="1_18ynb"]
 [ext_resource type="PackedScene" uid="uid://blps04rf4qa2l" path="res://Assets/NPCs/Raw/Child/Child.tscn" id="1_abds1"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lg0hc"]
@@ -11,7 +12,8 @@ height = 1.64148
 collision_mask = 7
 axis_lock_angular_x = true
 axis_lock_angular_z = true
-mass = 25.0
+mass = 10.0
+physics_material_override = ExtResource("1_18ynb")
 contact_monitor = true
 max_contacts_reported = 5
 script = ExtResource("1_3nrxh")

@@ -1,6 +1,8 @@
-[gd_scene load_steps=7 format=4 uid="uid://don7xwaol3tgt"]
+[gd_scene load_steps=9 format=4 uid="uid://don7xwaol3tgt"]
 
 [ext_resource type="Material" uid="uid://dksys72rkrjw" path="res://Assets/Materials/Prop Materials/Black.tres" id="1_vnoaj"]
+[ext_resource type="Material" uid="uid://byxnhi588l3yt" path="res://Assets/Materials/Prop Materials/Blue.tres" id="1_yd7lk"]
+[ext_resource type="Material" uid="uid://brd57hv5fq3e5" path="res://Assets/Materials/Prop Materials/White.tres" id="2_vbjoj"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_ode0a"]
 height = 0.237325
@@ -91,6 +93,8 @@ shape = SubResource("CylinderShape3D_ode0a")
 transform = Transform3D(114.199, 0, 0, 0, -1.36136e-05, 57.1407, 0, -114.199, -6.8117e-06, 0, 0.0994942, 0)
 mesh = SubResource("ArrayMesh_r3c5q")
 skeleton = NodePath("")
+surface_material_override/0 = ExtResource("1_yd7lk")
+surface_material_override/1 = ExtResource("2_vbjoj")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="RigidBody3D/Clock"]
 transform = Transform3D(1, 0, 0, 0, 0.387765, -5.32907e-15, 0, 2.28795e-12, 0.2719, 0.000906004, 5.89535e-05, 0.00114825)

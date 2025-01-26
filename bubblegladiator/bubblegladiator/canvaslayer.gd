@@ -2,16 +2,15 @@ extends CanvasLayer
 
 
 var currentscore = 0
-var collisions = 0
-var distance = 0
+#var distance = 0
 
 #need to connect signal 
-func _on_body_entered(body):
-	var scoreAdd = 100
-	scoreAdd = scoreAdd*collisions
-	scoreAdd = scoreAdd*distance 
-	currentscore += scoreAdd
-	update_score(currentscore)
+#func _on_body_entered(body):
+	#if body.name == "hazard":
+		#var scoreAdd = $hazard.scorevalue
+		#scoreAdd = scoreAdd*distance 
+		#currentscore += scoreAdd
+		#update_score(currentscore)
 
 
 func update_score(currentscore):

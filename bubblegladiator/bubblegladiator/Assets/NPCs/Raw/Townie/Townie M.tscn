@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://b8u3f8u5xgab0"]
 
-[ext_resource type="PackedScene" uid="uid://m7nays8n0783" path="res://Assets/Townie/Models/Townie M Base.fbx" id="1_oehyv"]
+[ext_resource type="PackedScene" uid="uid://m7nays8n0783" path="res://Assets/NPCs/Raw/Townie/Models/Townie M Base.fbx" id="1_oehyv"]
 [ext_resource type="Material" uid="uid://c56uhvd2y5htl" path="res://Assets/Materials/Skin.tres" id="2_is54n"]
-[ext_resource type="AnimationLibrary" uid="uid://crhcxyhcyo3wa" path="res://Assets/Townie/Townie Anims.res" id="2_xp3b4"]
+[ext_resource type="AnimationLibrary" uid="uid://crhcxyhcyo3wa" path="res://Assets/NPCs/Raw/Townie/Townie Anims.res" id="2_xp3b4"]
 [ext_resource type="Material" uid="uid://bcef7e0tobwr7" path="res://Assets/Materials/Clothes 1.tres" id="3_21flv"]
 
 [node name="Townie M" instance=ExtResource("1_oehyv")]

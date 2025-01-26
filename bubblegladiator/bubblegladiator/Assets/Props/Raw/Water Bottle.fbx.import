@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://fcxxonusdm1w"
-path="res://.godot/imported/Door.fbx-e6f3661c763f1d7b18e4bbc9c1d34fa2.scn"
+uid="uid://cw0vbeocpiptv"
+path="res://.godot/imported/Water Bottle.fbx-df96a3a973ce91e6ab6e1f25d6e27d2f.scn"
 
 [deps]
 
-source_file="res://Assets/Props/Models/Door.fbx"
-dest_files=["res://.godot/imported/Door.fbx-e6f3661c763f1d7b18e4bbc9c1d34fa2.scn"]
+source_file="res://Assets/Props/Raw/Water Bottle.fbx"
+dest_files=["res://.godot/imported/Water Bottle.fbx-df96a3a973ce91e6ab6e1f25d6e27d2f.scn"]
 
 [params]
 

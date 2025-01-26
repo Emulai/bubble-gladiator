@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://ctjxjhagdb6hw"]
 
-[ext_resource type="PackedScene" uid="uid://fcxxonusdm1w" path="res://Assets/Props/Models/Door.fbx" id="1_clah2"]
+[ext_resource type="PackedScene" uid="uid://fcxxonusdm1w" path="res://Assets/Props/Raw/Door.fbx" id="1_clah2"]
 [ext_resource type="Material" uid="uid://dksys72rkrjw" path="res://Assets/Materials/Prop Materials/Black.tres" id="2_5h4m2"]
 [ext_resource type="Material" uid="uid://brd57hv5fq3e5" path="res://Assets/Materials/Prop Materials/White.tres" id="3_umtnx"]
 [ext_resource type="Material" uid="uid://ciobw86of3r5q" path="res://Assets/Materials/Prop Materials/Green_Shiny.tres" id="4_nu0ed"]

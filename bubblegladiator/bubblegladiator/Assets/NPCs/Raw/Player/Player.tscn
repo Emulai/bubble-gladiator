@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://dplghvgu8wbha"]
 
-[ext_resource type="PackedScene" uid="uid://dorbgqxgt8i3l" path="res://Assets/Player/Player.fbx" id="1_j8xka"]
+[ext_resource type="PackedScene" uid="uid://dorbgqxgt8i3l" path="res://Assets/NPCs/Raw/Player/Player.fbx" id="1_j8xka"]
 [ext_resource type="Material" uid="uid://c56uhvd2y5htl" path="res://Assets/Materials/Skin.tres" id="2_r1j1k"]
 [ext_resource type="Material" uid="uid://dox8aw2iijxmw" path="res://Assets/Materials/Red Bubble.tres" id="3_8d57b"]
-[ext_resource type="AnimationLibrary" uid="uid://8711e2acw3mx" path="res://Assets/Player/Player Anim.res" id="4_m4pjm"]
+[ext_resource type="AnimationLibrary" uid="uid://8711e2acw3mx" path="res://Assets/NPCs/Raw/Player/Player Anim.res" id="4_m4pjm"]
 
 [node name="AnimTest" instance=ExtResource("1_j8xka")]
 

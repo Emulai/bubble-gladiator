@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bgpsq46b04vdv"
-path="res://.godot/imported/Child Base.fbx-b8b0bbbae55f828ab9a9ad0c3b7f2f0e.scn"
+path="res://.godot/imported/Child Base.fbx-85eb171ec45f9922bb29cbb5c58a791b.scn"
 
 [deps]
 
-source_file="res://Assets/Child/Child Base.fbx"
-dest_files=["res://.godot/imported/Child Base.fbx-b8b0bbbae55f828ab9a9ad0c3b7f2f0e.scn"]
+source_file="res://Assets/NPCs/Raw/Child/Child Base.fbx"
+dest_files=["res://.godot/imported/Child Base.fbx-85eb171ec45f9922bb29cbb5c58a791b.scn"]
 
 [params]
 

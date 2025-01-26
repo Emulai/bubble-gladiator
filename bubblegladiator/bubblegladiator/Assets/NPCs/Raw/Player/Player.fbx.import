@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c0prmwdcfujox"
-path="res://.godot/imported/Bubble Empty.fbx-2910299086d73c1785642d1ff7fa6e73.scn"
+uid="uid://dorbgqxgt8i3l"
+path="res://.godot/imported/Player.fbx-b2ee32647ce58b476df17bd613fd948e.scn"
 
 [deps]
 
-source_file="res://Assets/Props/Models/Bubble Empty.fbx"
-dest_files=["res://.godot/imported/Bubble Empty.fbx-2910299086d73c1785642d1ff7fa6e73.scn"]
+source_file="res://Assets/NPCs/Raw/Player/Player.fbx"
+dest_files=["res://.godot/imported/Player.fbx-b2ee32647ce58b476df17bd613fd948e.scn"]
 
 [params]
 

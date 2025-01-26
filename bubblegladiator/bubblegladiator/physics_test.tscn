@@ -1,7 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://c84agbstklbd0"]
+[gd_scene load_steps=6 format=3 uid="uid://c84agbstklbd0"]
 
 [ext_resource type="PackedScene" uid="uid://c2vbo4wtognle" path="res://player_controller.tscn" id="1_2sp0f"]
-[ext_resource type="Script" path="res://scripts/npc_controller.gd" id="2_2wby6"]
+[ext_resource type="PackedScene" uid="uid://ba2yy6rtwnnap" path="res://npc.tscn" id="2_5gudh"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5j43k"]
 albedo_color = Color(0.623529, 1, 0.486275, 1)
@@ -9,10 +9,6 @@ albedo_color = Color(0.623529, 1, 0.486275, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_0jd3t"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_sdhas"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hrdt5"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_0w2dj"]
 
 [node name="Node3D" type="Node3D"]
 
@@ -40,20 +36,4 @@ shape = SubResource("BoxShape3D_0jd3t")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Box"]
 mesh = SubResource("BoxMesh_sdhas")
 
-[node name="NPC" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.08739, 1.37731, -5.28115)
-collision_mask = 7
-axis_lock_angular_x = true
-axis_lock_angular_z = true
-contact_monitor = true
-max_contacts_reported = 5
-script = ExtResource("2_2wby6")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NPC"]
-shape = SubResource("CapsuleShape3D_hrdt5")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="NPC"]
-mesh = SubResource("CapsuleMesh_0w2dj")
-
-[connection signal="body_entered" from="NPC" to="NPC" method="_on_body_entered"]
-[connection signal="body_exited" from="NPC" to="NPC" method="_on_body_exited"]
+[node name="NPC" parent="." instance=ExtResource("2_5gudh")]

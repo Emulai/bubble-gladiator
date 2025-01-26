@@ -8,6 +8,8 @@ var current_ui_scene
 
 # Track whether a scene is paused or not
 var paused = false
+var totalScore = 0
+var whyScore: Array[String] = []
 
 # Track the time limit
 var timeLimit = 30
@@ -110,3 +112,12 @@ func change_3d_scene(new_scene: String, delete: bool = true, keep_running: bool 
 		current_3d_scene = new
 	else:
 		current_3d_scene = null
+
+func add_to_score(score: float, why: String):
+	totalScore += score
+	whyScore.push_back(why)
+	
+	print(str(totalScore) + " | " + why)
+
+func get_score():
+	return totalScore

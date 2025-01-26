@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://d4mkwybdu1hd1"]
+[gd_scene load_steps=3 format=3 uid="uid://d4mkwybdu1hd1"]
 
 [ext_resource type="Script" path="res://game_end_scene/scripts/end_game_ui.gd" id="1_yqdvb"]
+[ext_resource type="Script" path="res://arena_scene/score_ui_script.gd" id="2_ptpd0"]
 
 [node name="EndGameUi" type="Control"]
 layout_mode = 3
@@ -53,6 +54,7 @@ offset_right = 174.48
 offset_bottom = 61.448
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("2_ptpd0")
 
 [node name="TimeUp" type="LineEdit" parent="TimeUpAndScore"]
 layout_mode = 0

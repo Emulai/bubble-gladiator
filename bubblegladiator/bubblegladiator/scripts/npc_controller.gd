@@ -1,23 +1,12 @@
 extends RigidBody3D
 
-var start_position = position
-@export var distance_multiplier = 0
-@export var npc_distance = 0
+var start_position: Vector3
+@export var pointValue = 10
+var isLanded = true
+var hasCollidedWithHazard = false
 
 func _ready() -> void:
 	pass
-	#process_mode = PROCESS_MODE_DISABLED
-
-#func _physics_process(delta: float) -> void:
-	#move_and_slide()
-	#for i in get_slide_collision_count():
-		#var collision = get_slide_collision(i)
-		#
-		#if collision.get_collider().name == "PlayerBody3D":
-			#print("collided with player")
-			#axis_lock_angular_x = false
-			#axis_lock_angular_z = false
-
 
 func _on_body_entered(body: Node):
 	if body.name == "PlayerBody3D":
@@ -38,10 +27,22 @@ func _on_body_entered(body: Node):
 		else:
 			apply_force(result * Global.game_manager.launch_physics.normal_launch_force)
 		
-		npc_distance = position.distance_to(start_position) 
-		distance_multiplier = npc_distance/100
+		start_position = position
+		isLanded = false
 
+	elif body.name == "Floor" and not isLanded:
+		isLanded = true
+		var landingPosition = position
+		var distance = ceil(start_position.distance_to(landingPosition))
+		var totalPoints = pointValue * distance
+		var reason = name + " thrown " + str(distance) + "ms for " + str(totalPoints) + " points!"
+		Global.game_manager.add_to_score(pointValue * distance, reason)
 
-
+	elif body.is_in_group("Hazard") and not hasCollidedWithHazard:
+		hasCollidedWithHazard = true
+		var totalPoints = pointValue * body.hazardMult
+		var reason = name + " thrown into " + body.name + " for " + str(totalPoints) + " points!"
+		Global.game_manager.add_to_score(pointValue * body.hazardMult, reason)
+	
 func _on_body_exited(body: Node) -> void:
 	pass # Replace with function body.

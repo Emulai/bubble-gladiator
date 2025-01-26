@@ -80,28 +80,30 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_imnht")
 
-[node name="Clock" type="Node3D"]
-
-[node name="RigidBody3D" type="RigidBody3D" parent="."]
+[node name="Clock RB" type="RigidBody3D"]
+collision_mask = 7
 freeze = true
+freeze_mode = 1
+contact_monitor = true
+max_contacts_reported = 5
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.151391, 0)
 shape = SubResource("CylinderShape3D_ode0a")
 
-[node name="Clock" type="MeshInstance3D" parent="RigidBody3D"]
+[node name="Clock" type="MeshInstance3D" parent="."]
 transform = Transform3D(114.199, 0, 0, 0, -1.36136e-05, 57.1407, 0, -114.199, -6.8117e-06, 0, 0.0994942, 0)
 mesh = SubResource("ArrayMesh_r3c5q")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("1_yd7lk")
 surface_material_override/1 = ExtResource("2_vbjoj")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="RigidBody3D/Clock"]
+[node name="CSGBox3D" type="CSGBox3D" parent="Clock"]
 transform = Transform3D(1, 0, 0, 0, 0.387765, -5.32907e-15, 0, 2.28795e-12, 0.2719, 0.000906004, 5.89535e-05, 0.00114825)
 size = Vector3(0.00250244, 0.001, 0.001)
 material = ExtResource("1_vnoaj")
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="RigidBody3D/Clock"]
+[node name="CSGBox3D2" type="CSGBox3D" parent="Clock"]
 transform = Transform3D(-4.37114e-08, 0.387765, 6.47793e-08, -1, -1.69498e-08, -6.47793e-08, -2.38247e-07, -9.23813e-08, 0.2719, -0.000119776, -0.000539253, 0.00114826)
 size = Vector3(0.00137329, 0.001, 0.001)
 material = ExtResource("1_vnoaj")

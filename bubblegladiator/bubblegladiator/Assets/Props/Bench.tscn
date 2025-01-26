@@ -76,17 +76,17 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_1nhtb")
 
-[node name="Bench" type="Node3D"]
+[node name="Bench RB" type="RigidBody3D"]
+collision_mask = 7
+mass = 8.0
+contact_monitor = true
+max_contacts_reported = 5
 
-[node name="RigidBody3D" type="RigidBody3D" parent="."]
-collision_layer = 3
-collision_mask = 3
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00919342, 0.367798, 0)
 shape = SubResource("BoxShape3D_pt77h")
 
-[node name="Bench" type="MeshInstance3D" parent="RigidBody3D"]
+[node name="Bench" type="MeshInstance3D" parent="."]
 transform = Transform3D(144.674, 0, 0, 0, -1.72464e-05, 100, 0, -144.674, -1.19209e-05, 1.19209e-07, 0, 0)
 mesh = SubResource("ArrayMesh_8ijp1")
 skeleton = NodePath("")
